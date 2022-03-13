@@ -152,6 +152,22 @@ Route::get('/msg/kill/{id}',[
 	Route::post('/project/edit','ProjectController@update');
 	Route::get('/project/delete/{id}','ProjectController@delete');
 
+		//============= Admin.Project Expenses =============
+	Route::get('/projectExpense/entry', 'ProjectExpenseController@index');
+    Route::post('/projectExpense/entry', 'ProjectExpenseController@save');
+    Route::get('/projectExpense/manage','ProjectExpenseController@manage');
+	Route::get('/projectExpense/edit/{id}','ProjectExpenseController@edit');
+	Route::post('/projectExpense/edit','ProjectExpenseController@update');
+	Route::get('/projectExpense/delete/{id}','ProjectExpenseController@delete');
+
+		//============= Admin.Project Deposit =============
+	Route::get('/projectDeposit/entry', 'ProjectDepositController@index');
+    Route::post('/projectDeposit/entry', 'ProjectDepositController@save');
+    Route::get('/projectDeposit/manage','ProjectDepositController@manage');
+	Route::get('/projectDeposit/edit/{id}','ProjectDepositController@edit');
+	Route::post('/projectDeposit/edit','ProjectDepositController@update');
+	Route::get('/projectDeposit/delete/{id}','ProjectDepositController@delete');
+
 	//============= Admin.About =============
 	Route::get('/about/entry', 'AboutController@index');
     Route::post('/about/entry', 'AboutController@save');

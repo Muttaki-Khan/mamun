@@ -18,7 +18,6 @@
                                 </li>
                                
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
                         </li>
                         <!-- <li>
@@ -107,10 +106,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Project Expense<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ url('/item/entry')}}">Item Entry</a>
+                                    <a href="{{ url('/projectExpense/entry')}}">Add New</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/item/manage')}}">Item Manage</a>
+                                    <a href="{{ url('/projectExpense/manage')}}">All Record</a>
                                 </li>
                                
                             </ul>
@@ -120,10 +119,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Project Deposit<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ url('/item/entry')}}">Item Entry</a>
+                                    <a href="{{ url('/projectDeposit/entry')}}">Add New</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/item/manage')}}">Item Manage</a>
+                                    <a href="{{ url('/projectDeposit/manage')}}">All Record</a>
                                 </li>
                                
                             </ul>
