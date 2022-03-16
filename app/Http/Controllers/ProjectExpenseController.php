@@ -13,16 +13,16 @@ class ProjectExpenseController extends Controller
     public function index(){
 
       $tenders = DB::table('projects')->get();
+      $items = DB::table('items')->get();
 
-      return view('admin.projectExpense.projectEntry',['tenders'=>$tenders]); 
+
+      return view('admin.projectExpense.projectEntry',['tenders'=>$tenders,'items'=>$items]); 
   }
   public function save(Request $request){
 
-      $project = new project();
+      $project = new projects_expenses();
 
-  		$project->project_name = $request->project_name ;
   		$project->tender_id = $request->tender_id;
-      $project->tenders = $request->tender_id;
       $project->item_id = $request->item_id;
       $project->payment_date = $request->payment_date;
       $project->quantity = $request->quantity;
@@ -33,14 +33,17 @@ class ProjectExpenseController extends Controller
 
   		$project->save();
 
-      return redirect('/projectExpense/entry')->with('message','project insert successfully');
+      return redirect('/projectExpense/entry')->with('message','insert successfully');
 
 
   }
 
   public function manage(){
 
-      $projects = projects_expenses::all();      
+      $projects = DB::table('projects_expenses')
+                //  ->join('projects','projects.tender_id','=','tender_id')
+                //  ->select('projects_expenses.*', 'projects.project_name as ten')
+                 ->get();
 
 
       return view('admin.projectExpense.projectManage',['projects'=>$projects]); 
@@ -59,22 +62,28 @@ class ProjectExpenseController extends Controller
   }
 
   public function edit($id){
+     $tenders = DB::table('projects')->get();
+     $items = DB::table('items')->get();
 
-
-     $project= project::where('id',$id)->first();
-     return view('admin.projectExpense.projectEdit',['project'=>$project]);
+     $project= projects_expenses::where('id',$id)->first();
+     return view('admin.projectExpense.projectEdit',['project'=>$project,'tenders'=>$tenders,'items'=>$items]);
   }
   public function update(Request $request){
 
 
     // $project= project::find($request->project_id);
-     $projectPic= project::where('id',$request->project_id)->first();
+     $projectPic= projects_expenses::where('id',$request->project_id)->first();
 
-     $project= project::find($request->project_id);
+     $project= projects_expenses::find($request->project_id);
 
-     $project->project_name = $request->project_name ;
+
      $project->tender_id = $request->tender_id;
-     $project->estimate_cost = $request->estimate_cost;
+     $project->item_id = $request->item_id;
+     $project->payment_date = $request->payment_date;
+     $project->quantity = $request->quantity;
+     $project->price = $request->price;
+
+     $project->total = $request->total;
 
      $project->save();
 
@@ -85,14 +94,14 @@ class ProjectExpenseController extends Controller
   public function delete($id){
 
 
-    $projectPic= project::where('id',$id)->first();
+    $projectPic= projects_expenses::where('id',$id)->first();
      if (file_exists($projectPic->pic)) {
        unlink($projectPic->pic);
      }
      
 
 
-     $projectDelete= project::find($id);
+     $projectDelete= projects_expenses::find($id);
      $projectDelete->delete();
      
      return redirect('/projectExpense/manage')->with('message','Deleted successfully');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\projects;
 use App\project;
 use DB;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,7 @@ class ProjectController extends Controller
   }
   public function save(Request $request){
 
-      $project = new project();
+      $project = new projects();
 
   		$project->project_name = $request->project_name ;
   		$project->tender_id = $request->tender_id;
@@ -31,7 +32,7 @@ class ProjectController extends Controller
 
   public function manage(){
 
-      $projects = project::all();      
+      $projects = projects::all();      
 
 
       return view('admin.project.projectManage',['projects'=>$projects]); 
@@ -52,16 +53,16 @@ class ProjectController extends Controller
   public function edit($id){
 
 
-     $project= project::where('id',$id)->first();
+     $project= projects::where('id',$id)->first();
      return view('admin.project.projectEdit',['project'=>$project]);
   }
   public function update(Request $request){
 
 
     // $project= project::find($request->project_id);
-     $projectPic= project::where('id',$request->project_id)->first();
+     $projectPic= projects::where('id',$request->project_id)->first();
 
-     $project= project::find($request->project_id);
+     $project= projects::find($request->project_id);
 
      $project->project_name = $request->project_name ;
      $project->tender_id = $request->tender_id;
@@ -76,14 +77,14 @@ class ProjectController extends Controller
   public function delete($id){
 
 
-    $projectPic= project::where('id',$id)->first();
+    $projectPic= projects::where('id',$id)->first();
      if (file_exists($projectPic->pic)) {
        unlink($projectPic->pic);
      }
      
 
 
-     $projectDelete= project::find($id);
+     $projectDelete= projects::find($id);
      $projectDelete->delete();
      
      return redirect('/project/manage')->with('message','Deleted successfully');

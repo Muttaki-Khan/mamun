@@ -18,7 +18,6 @@ class CreateSuppliersTable extends Migration
             $table->integer('quantity');
             $table->double('order_amount', 15, 5);
             $table->date('order_date');
-            $table->unsignedBigInteger('tender_id');
             $table->timestamps();
             $table->softDeletes();
         });

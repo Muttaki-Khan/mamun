@@ -29,15 +29,19 @@
                                         </div>
 
                                         
-                                        <div class="form-group">
+                                        <div class="form-group datepicker">
                                             <label>Payment Date</label>
-                                            <input class="form-control" name="payment_date">
+                                            <input type="text"  class="form-control datepicker" id="datepicker" name="payment_date">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Item</label>
                                             <select name="item_id" class="form-control">
+                                            @foreach($items as $item)    
+                                            <option value='{{$item->id}}'>{{$item->item_name}}</option>
+                                            @endforeach
+                                            </select>
                                            
                                         </select>
                                         </div>
@@ -70,3 +74,5 @@
                             </div>
 
 @endsection
+
+

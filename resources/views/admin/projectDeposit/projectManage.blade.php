@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	All Project List
+	All Project Deposit List
     <hr>
     <h3 style="color: green;">{{Session::get('message')}}</h3>
 
@@ -24,8 +24,9 @@
                                     <tr>
                                         <th>SI.</th>
                                         <th>Project Name</th>
-                                        <th>Tender ID</th>
-                                        <th>Estimate Cost</th>
+                                        <th>Deposit Date</th>
+                                        <th>Deposit By</th>
+                                        <th>Amount</th>
                                         
                                         <th>Action</th>
                                     </tr>
@@ -35,10 +36,12 @@
                                 	<tr>
                                 		<td>{{++$i}}</td>
                                 		<td>{{$project->project_name}}</td>
-                                		<td>{{$project->tender_id}}</td>
-                                		<td>{{$project->estimate_cost}}</td>
+                                		<td>{{$project->deposite_date}}</td>
+                                		<td>{{$project->deposite_by}}</td>
+                                        <td>{{$project->amount}}</td>
+
                                 		
-                                		<td><a href="{{url('/project/view/'.$project->id)}}" target="_blank">View</a> |<a href="{{url('/project/edit/'.$project->id)}}" target="_blank">Edit</a> |<a href="{{url('/project/delete/'.$project->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/project/view/'.$project->id)}}" target="_blank"></a> |<a href="{{url('/projectDeposit/edit/'.$project->id)}}" target="_blank">Edit</a> |<a href="{{url('/projectDeposit/delete/'.$project->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	Item Entry
+	Add New Item
 	<hr>
     <h4 style="color: green;">{{Session::get('message')}}</h4>
 
@@ -22,35 +22,7 @@
                                             <input type="text" class="form-control" name="name">
                                         
                                         </div>
-                                        <div class="form-group">
-                                            <label>Category</label>
-                                            <select name="categoryId" class="form-control">
-                                            @foreach($categories as $category)    
-                                            <option value='{{$category->id}}'>{{$category->categoryName}}</option>
-                                            @endforeach
-                                        </select>
-                                        </div>
-                                       <div class="form-group">
-                                            <label>Item Code</label>
-                                            <input class="form-control" name="code">
-                                        
-                                        </div>
-                                         <div class="form-group">
-                                            <label>Picture</label>
-                                            <input type="file" class="form-control" name="pic">
-                                        
-                                        </div>
-
-                                        <div class="form-group">
-                                        <input type="hidden"  name="user_id">
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label>Information</label>
-                                            <textarea class="form-control" name="information" placeholder="Enter description"> </textarea>
-                                        </div>
-
+                                       
                                         
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-block btn-primary">

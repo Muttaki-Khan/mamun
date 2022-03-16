@@ -4,17 +4,19 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSuppliersDueTable extends Migration
+class CreateSalarySheetTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('suppliers_due', function (Blueprint $table) {
+        Schema::create('salary_sheets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('suppliers_id');
-            $table->double('due_amount', 15, 5);
+            $table->date('payment_date');
+            $table->string('month', 50);
+            $table->unsignedBigInteger('employee_id');
+            $table->double('amount', 15, 5);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -25,6 +27,6 @@ class CreateSuppliersDueTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suppliers_due');
+        Schema::dropIfExists('salary_sheets');
     }
 }

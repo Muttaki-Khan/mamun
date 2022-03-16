@@ -18,21 +18,23 @@
                                     
                                         {!! Form::open(['url'=>'/projectDeposit/entry','method'=>'post','enctype'=>'multipart/form-data'])!!}
                                        
-                                       <div class="form-group">
-                                            <label>Tender ID</label>
-                                            <input class="form-control" name="tender_id">
-                                        
-                                        </div>
-
                                         <div class="form-group">
+                                            <label>Project</label>
+                                            <select name="tender_id" class="form-control">
+                                            @foreach($tenders as $tender)    
+                                            <option value='{{$tender->id}}'>{{$tender->project_name}}</option>
+                                            @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group datepicker">
                                             <label>Deposit Date</label>
-                                            <input class="form-control" name="deposite_date">
+                                            <input type="text"  class="form-control datepicker" id="datepicker" name="deposit_date">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Deposit By</label>
-                                            <input class="form-control" name="deposite_by">
+                                            <input type="text" class="form-control" name="deposit_by">
                                         
                                         </div>
 

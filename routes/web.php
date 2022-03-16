@@ -168,6 +168,67 @@ Route::get('/msg/kill/{id}',[
 	Route::post('/projectDeposit/edit','ProjectDepositController@update');
 	Route::get('/projectDeposit/delete/{id}','ProjectDepositController@delete');
 
+	
+		//============= Admin.Employee =============
+	Route::get('/employee/entry', 'EmployeeController@index');
+    Route::post('/employee/entry', 'EmployeeController@save');
+    Route::get('/employee/manage','EmployeeController@manage');
+	Route::get('/employee/edit/{id}','EmployeeController@edit');
+	Route::post('/employee/edit','EmployeeController@update');
+	Route::get('/employee/delete/{id}','EmployeeController@delete');
+
+	
+		//============= Admin.Salary =============
+	Route::get('/salary/entry', 'SalaryController@index');
+    Route::post('/salary/entry', 'SalaryController@save');
+    Route::get('/salary/manage','SalaryController@manage');
+	Route::get('/salary/edit/{id}','SalaryController@edit');
+	Route::post('/salary/edit','SalaryController@update');
+	Route::get('/salary/delete/{id}','SalaryController@delete');
+
+	
+		//============= Admin.Supliers =============
+	Route::get('/suppliers/entry', 'SuppliersController@index');
+    Route::post('/suppliers/entry', 'SuppliersController@save');
+    Route::get('/suppliers/manage','SuppliersController@manage');
+	Route::get('/suppliers/edit/{id}','SuppliersController@edit');
+	Route::post('/suppliers/edit','SuppliersController@update');
+	Route::get('/suppliers/delete/{id}','SuppliersController@delete');
+
+			//============= Admin.Supliers Due =============
+	Route::get('/suppliersDue/entry', 'SuppliersDueController@index');
+    Route::post('/suppliersDue/entry', 'SuppliersDueController@save');
+    Route::get('/suppliersDue/manage','SuppliersDueController@manage');
+	Route::get('/suppliersDue/edit/{id}','SuppliersDueController@edit');
+	Route::post('/suppliersDue/edit','SuppliersDueController@update');
+	Route::get('/suppliersDue/delete/{id}','SuppliersDueController@delete');
+	
+			//============= Admin.Supliers Payment =============
+	Route::get('/suppliersPayment/entry', 'SuppliersPaymentController@index');
+    Route::post('/suppliersPayment/entry', 'SuppliersPaymentController@save');
+    Route::get('/suppliersPayment/manage','SuppliersPaymentController@manage');
+	Route::get('/suppliersPayment/edit/{id}','SuppliersPaymentController@edit');
+	Route::post('/suppliersPayment/edit','SuppliersPaymentController@update');
+	Route::get('/suppliersPayment/delete/{id}','SuppliersPaymentController@delete');
+
+				//============= Admin.Stock =============
+	Route::get('/stock/entry', 'StockController@index');
+    Route::post('/stock/entry', 'StockController@save');
+    Route::get('/stock/manage','StockController@manage');
+	Route::get('/stock/edit/{id}','StockController@edit');
+	Route::post('/stock/edit','StockController@update');
+	Route::get('/stock/delete/{id}','StockController@delete');
+
+				//============= Admin.Office Expenses =============
+	Route::get('/officeExpense/entry', 'OfficeExpenseController@index');
+    Route::post('/officeExpense/entry', 'OfficeExpenseController@save');
+    Route::get('/officeExpense/manage','OfficeExpenseController@manage');
+	Route::get('/officeExpense/edit/{id}','OfficeExpenseController@edit');
+	Route::post('/officeExpense/edit','OfficeExpenseController@update');
+	Route::get('/officeExpense/delete/{id}','OfficeExpenseController@delete');
+
+
+
 	//============= Admin.About =============
 	Route::get('/about/entry', 'AboutController@index');
     Route::post('/about/entry', 'AboutController@save');

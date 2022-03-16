@@ -23,7 +23,6 @@
                                 <thead>
                                     <tr>
                                         <th>SI.</th>
-                                        <th>Project Name</th>
                                         <th>Tender ID</th>
                                         <th>Payment Date</th>
                                         <th>Item</th>
@@ -38,11 +37,15 @@
                                 	@foreach($projects as $project)
                                 	<tr>
                                 		<td>{{++$i}}</td>
-                                		<td>{{$project->project_name}}</td>
                                 		<td>{{$project->tender_id}}</td>
-                                		<td>{{$project->estimate_cost}}</td>
+                                		<td>{{$project->payment_date}}</td>
+                                        <td>{{$project->item_id}}</td>
+                                		<td>{{$project->quantity}}</td>
+                                		<td>{{$project->price}}</td>
+                                        <td>{{$project->total}}</td>
+
                                 		
-                                		<td><a href="{{url('/project/view/'.$project->id)}}" target="_blank">View</a> |<a href="{{url('/project/edit/'.$project->id)}}" target="_blank">Edit</a> |<a href="{{url('/project/delete/'.$project->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/project/view/'.$project->id)}}" target="_blank"></a> |<a href="{{url('/projectExpense/edit/'.$project->id)}}" target="_blank">Edit</a> |<a href="{{url('/projectExpense/delete/'.$project->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach
