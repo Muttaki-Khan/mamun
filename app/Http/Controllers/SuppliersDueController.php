@@ -84,8 +84,6 @@ class SuppliersDueController extends Controller
        unlink($suppliersPic->pic);
      }
      
-
-
      $suppliersDelete= suppliers_dues::find($id);
      $suppliersDelete->delete();
      
