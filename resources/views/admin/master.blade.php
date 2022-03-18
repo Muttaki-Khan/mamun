@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,15 +82,27 @@
     <script src="{{ asset('admin') }}/dist/js/sb-admin-2.js"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"> 
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-  <script>
-  $(document).ready (function() {
-    $( "#datepicker" ).datepicker({dateFormat:'yy-mm-dd'});
-  } );
-  </script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="sweetalert2.all.min.js"></script>
+    @include('sweetalert::alert')
 
 </body>
 
 </html>
+
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script>
+  $(document).ready (function() {
+    $( "#datepicker" ).datepicker({dateFormat:'yy-mm-dd'});
+  } );
+</script>
+
+<script>
+  $('#click').on('click',function() {
+    Swal.fire(
+    'The Internet?',
+    'That thing is still around?',
+    'question'
+  )
+  } )
+</script>

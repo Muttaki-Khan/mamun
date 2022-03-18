@@ -20,16 +20,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('role_id');
             $table->string('password');
-            $table->string('font')->nullable();
-            $table->string('logo')->nullable();
-            $table->string('theme')->nullable();
-            $table->string('img1')->nullable();
-            $table->string('img2')->nullable();
-            $table->string('img3')->nullable();
-            $table->string('textcolor')->nullable();
-            $table->string('footimg')->nullable();
-            $table->string('mapimage')->nullable();
-            $table->string('colablink')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

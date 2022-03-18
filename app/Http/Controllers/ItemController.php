@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Http\Request;
 use App\category;
@@ -24,7 +25,7 @@ class ItemController extends Controller
   		$item->save();
 
       $lastId = $item->id;
-    
+      Alert::success('Success', 'Successfully Added');
 
       return redirect('/item/entry')->with('message','Item insert successfully');
 
@@ -33,9 +34,8 @@ class ItemController extends Controller
 
   public function manage(){
 
-      $items = DB::table('items')
-                  ->get();
-      
+      $items = DB::table('items')->get();
+
       return view('admin.item.itemManage',['items'=>$items]); 
   }
 
@@ -49,8 +49,6 @@ class ItemController extends Controller
                   ->first();
                  // ->where('categories')
       
-
-
       return view('admin.item.singleItem',['item'=>$itemById]); 
   }
 
@@ -81,7 +79,7 @@ class ItemController extends Controller
      if (file_exists($itemPic->pic)) {
        unlink($itemPic->pic);
      }
-     
+     Alert::warning('Warning!!', 'Do you want to delete?');
 
 
      $itemDelete= item::find($id);
@@ -92,3 +90,4 @@ class ItemController extends Controller
 
 
 }
+

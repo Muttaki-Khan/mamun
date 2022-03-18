@@ -39,22 +39,9 @@ Route::group(['middleware' => ['web', 'auth']], function(){
             return view('admin.home.homeContent', compact('user'));
         
         } else{
-			$user = User::where('id',1)->first();
-			$theme = $user->theme;
-			$logo = $user->logo;
-			$font = $user->font;
-			$img1 = $user->img1;
-			$img2 = $user->img2;
-        	$img3 = $user->img3;
-        	$textcolor = $user->textcolor;
-			$latest = DB::table('items')->orderBy('id', 'desc')->where('user_id',1)->skip(0)->take(1)->get();
-			$latest2 = DB::table('items')->orderBy('id', 'desc')->where('user_id',1)->skip(1)->take(1)->get();
-			$latest3 = DB::table('items')->orderBy('id', 'desc')->where('user_id',1)->skip(2)->take(1)->get();
-			$categories = category::all();
-			$footimg = $user->footimg;
-			$contacts = contacts::where('id',1)->first();
+			
 
-            return view('frontView.home.homeContent', compact('contacts','theme','logo','font','img1','img2','img3','textcolor','latest','latest2','latest3','categories','footimg'));
+            return view('frontView.home.homeContent');
         }
     });
 });
