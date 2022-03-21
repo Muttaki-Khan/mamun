@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\offices;
 use App\office_expenses;
 use DB;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class OfficeExpenseController extends Controller
@@ -23,7 +24,12 @@ class OfficeExpenseController extends Controller
       $office->debit_by = $request->debit_by;
       $office->amount = $request->amount; 
 
+      if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/officeExpense/entry')->with('message','You don\'t have permssion to add');
+      }
+      
   		$office->save();
+      Alert::success('Success', 'Successfully Added');
 
       return redirect('/officeExpense/entry')->with('message','insert successfully');
 
@@ -33,10 +39,17 @@ class OfficeExpenseController extends Controller
   public function manage(){
 
       $offices = DB::table('office_expenses')->get();
-
-
       return view('admin.officeExpense.officeManage',['offices'=>$offices]); 
   }
+
+  public function search(Request $request){
+    $projects = DB::table('office_expenses')
+                ->whereBetween('expense_date', [$request->from_date,$request->to_date])
+                
+                ->get();
+
+    return view('admin.projectExpense.projectManage',['projects'=>$projects]); 
+}
 
 
   public function singleoffice($id){
@@ -51,6 +64,9 @@ class OfficeExpenseController extends Controller
   }
 
   public function edit($id){
+    if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/officeExpense/manage')->with('message','You don\'t have permssion to update');
+    }
 
      $office= office_expenses::where('id',$id)->first();
      return view('admin.officeExpense.officeEdit',['office'=>$office]);
@@ -82,7 +98,9 @@ class OfficeExpenseController extends Controller
        unlink($officePic->pic);
      }
      
-
+     if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/officeExpense/manage')->with('message','You don\'t have permssion to delete');
+    }
 
      $officeDelete= office_expenses::find($id);
      $officeDelete->delete();

@@ -22,19 +22,19 @@
                                             <label>Project</label>
                                             <select name="tender_id" class="form-control">
                                             @foreach($tenders as $tender)    
-                                            <option value='{{$tender->id}}'>{{$tender->project_name}}</option>
+                                            <option value='{{$tender->tender_id}}'>{{$tender->project_name}}</option>
                                             @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group datepicker">
                                             <label>Deposit Date</label>
-                                            <input type="text"  class="form-control datepicker" id="datepicker" name="deposit_date">
+                                            <input type="text"  class="form-control datepicker" id="datepicker" name="deposite_date">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Deposit By</label>
-                                            <input type="text" class="form-control" name="deposit_by">
+                                            <input type="text" class="form-control" name="deposite_by">
                                         
                                         </div>
 

@@ -25,7 +25,7 @@ class MainHomeController extends Controller
         $is_admin = true;
         if(Auth::user()==null) {
           $is_admin=false;
-        } else if(User::where('id',Auth::id())->first()->role_id==2) {
+        } else if(User::where('id',Auth::id())->first()->role_id!=1) {
           $is_admin=false;
         }
         if($is_admin==false) {

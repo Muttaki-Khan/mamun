@@ -35,13 +35,13 @@
                                 	@foreach($salarys as $salary)
                                 	<tr>
                                 		<td>{{++$i}}</td>
-                                		<td>{{$salary->employee_id}}</td>
+                                		<td>{{$salary->name}}</td>
                                 		<td>{{$salary->payment_date}}</td>
                                 		<td>{{$salary->month}}</td>
                                         <td>{{$salary->amount}}</td>
 
                                 		
-                                		<td><a href="{{url('/salary/view/'.$salary->id)}}" target="_blank"></a> |<a href="{{url('/salary/edit/'.$salary->id)}}" target="_blank">Edit</a> |<a href="{{url('/salary/delete/'.$salary->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/salary/view/'.$salary->id)}}" target="_blank"></a> <a href="{{url('/salary/edit/'.$salary->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/salary/delete/'.$salary->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach

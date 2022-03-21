@@ -19,12 +19,12 @@
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Contact</div>
-                                    <div>Contact</div>
+                                    <div class="huge"><h2>Projects</h2></div>
+                                    <div>Project Expense</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="{{ url('/info2')}}">
+                        <a href="{{ url('/projectExpense/manage')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -41,12 +41,12 @@
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Items</div>
-                                    <div>Items</div>
+                                    <div class=""><h2>Suppliers</h2></div>
+                                    <div>Suppliers Payment</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="{{ url('/item/manage')}}">
+                        <a href="{{ url('/suppliersPayment/manage')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -63,12 +63,12 @@
                                     <i class="fa fa-tasks fa-4x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Staffs</div>
-                                    <div>Staffs</div>
+                                <div class="huge"><h2>Office</h2></div>
+                                    <div>office expense</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="{{ url('/staff/manage')}}">
+                        <a href="{{ url('/officeExpense/manage')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -85,12 +85,12 @@
                                     <i class="fa fa-support fa-4x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Category</div>
-                                    <div>Category</div>
+                                <div class="huge"><h2>Salary</h2></div>
+                                    <div>salary details</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="{{ url('/category/manage')}}">
+                        <a href="{{ url('/salary/manage')}}">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

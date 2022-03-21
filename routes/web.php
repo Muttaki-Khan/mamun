@@ -41,7 +41,7 @@ Route::group(['middleware' => ['web', 'auth']], function(){
         } else{
 			
 
-            return view('frontView.home.homeContent');
+            return view('admin.home.homeContent');
         }
     });
 });
@@ -146,6 +146,8 @@ Route::get('/msg/kill/{id}',[
 	Route::get('/projectExpense/edit/{id}','ProjectExpenseController@edit');
 	Route::post('/projectExpense/edit','ProjectExpenseController@update');
 	Route::get('/projectExpense/delete/{id}','ProjectExpenseController@delete');
+	Route::post('/projectExpense/manage','ProjectExpenseController@search');
+
 
 		//============= Admin.Project Deposit =============
 	Route::get('/projectDeposit/entry', 'ProjectDepositController@index');
@@ -154,6 +156,7 @@ Route::get('/msg/kill/{id}',[
 	Route::get('/projectDeposit/edit/{id}','ProjectDepositController@edit');
 	Route::post('/projectDeposit/edit','ProjectDepositController@update');
 	Route::get('/projectDeposit/delete/{id}','ProjectDepositController@delete');
+	Route::post('/projectDeposit/manage','ProjectDepositController@search');
 
 	
 		//============= Admin.Employee =============
@@ -197,6 +200,7 @@ Route::get('/msg/kill/{id}',[
 	Route::get('/suppliersPayment/edit/{id}','SuppliersPaymentController@edit');
 	Route::post('/suppliersPayment/edit','SuppliersPaymentController@update');
 	Route::get('/suppliersPayment/delete/{id}','SuppliersPaymentController@delete');
+    Route::post('/suppliersPayment/manage','SuppliersPaymentController@search');
 
 				//============= Admin.Stock =============
 	Route::get('/stock/entry', 'StockController@index');
@@ -213,6 +217,8 @@ Route::get('/msg/kill/{id}',[
 	Route::get('/officeExpense/edit/{id}','OfficeExpenseController@edit');
 	Route::post('/officeExpense/edit','OfficeExpenseController@update');
 	Route::get('/officeExpense/delete/{id}','OfficeExpenseController@delete');
+	Route::post('/officeExpense/manage','OfficeExpenseController@search');
+
 
 
 

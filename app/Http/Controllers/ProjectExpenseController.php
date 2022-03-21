@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Http\Request;
 use App\projects;
 use App\projects_expenses;
 use DB;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectExpenseController extends Controller
@@ -30,8 +32,12 @@ class ProjectExpenseController extends Controller
 
   		$project->total = $request->total;
  
-
+      if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/projectExpense/entry')->with('message','You don\'t have permssion to add');
+      }
+      
   		$project->save();
+      Alert::success('Success', 'Successfully Added');
 
       return redirect('/projectExpense/entry')->with('message','insert successfully');
 
@@ -41,13 +47,22 @@ class ProjectExpenseController extends Controller
   public function manage(){
 
       $projects = DB::table('projects_expenses')
-                //  ->join('projects','projects.tender_id','=','tender_id')
-                //  ->select('projects_expenses.*', 'projects.project_name as ten')
-                 ->get();
-
+                  ->join('projects','projects.tender_id','=','projects_expenses.tender_id')
+                  ->select('projects_expenses.*','projects.project_name')
+                  ->get();
 
       return view('admin.projectExpense.projectManage',['projects'=>$projects]); 
   }
+
+  public function search(Request $request){
+    $projects = DB::table('projects_expenses')
+                ->whereBetween('payment_date', [$request->from_date,$request->to_date])
+                ->join('projects','projects.tender_id','=','projects_expenses.tender_id')
+                ->select('projects_expenses.*','projects.project_name')
+                ->get();
+
+    return view('admin.projectExpense.projectManage',['projects'=>$projects]); 
+}
 
 
   public function singleproject($id){
@@ -64,7 +79,9 @@ class ProjectExpenseController extends Controller
   public function edit($id){
      $tenders = DB::table('projects')->get();
      $items = DB::table('items')->get();
-
+     if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/projectExpense/manage')->with('message','You don\'t have permssion to update');
+    }
      $project= projects_expenses::where('id',$id)->first();
      return view('admin.projectExpense.projectEdit',['project'=>$project,'tenders'=>$tenders,'items'=>$items]);
   }
@@ -93,13 +110,9 @@ class ProjectExpenseController extends Controller
   }
   public function delete($id){
 
-
-    $projectPic= projects_expenses::where('id',$id)->first();
-     if (file_exists($projectPic->pic)) {
-       unlink($projectPic->pic);
-     }
-     
-
+    if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/projectExpense/manage')->with('message','You don\'t have permssion to delete');
+    }
 
      $projectDelete= projects_expenses::find($id);
      $projectDelete->delete();

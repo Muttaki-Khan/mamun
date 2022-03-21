@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 use App\employees;
+use Illuminate\Support\Facades\Auth;
+
 class EmployeeController extends Controller
 {
   	public function index(){
@@ -22,7 +24,12 @@ class EmployeeController extends Controller
         $employee->salary = $request->salary;
 
 
+        if(User::where('id',Auth::id())->first()->role_id!=1) {
+            return redirect('/employee/entry')->with('message','You don\'t have permssion to add');
+          }
+          
   		$employee->save();
+        Alert::success('Success', 'Successfully Added');
 
   		return redirect('/employee/entry')->with('message','Data insert successfully.');
 
@@ -36,7 +43,9 @@ class EmployeeController extends Controller
   }
 
   public function edit($id){
-
+    if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/employee/manage')->with('message','You don\'t have permssion to update');
+      }
       $employee = employees::where('id',$id)->first();
       return view('admin.employee.employeeEdit',['employee'=>$employee]);
   }
@@ -59,11 +68,11 @@ class EmployeeController extends Controller
   }
 
   public function delete($id){
-
+    if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/employee/manage')->with('message','You don\'t have permssion to delete');
+      }
       $employeeDelete = employees::find($id);
       $employeeDelete->delete();
-      
-
       return redirect('/employee/manage')->with('message','Deleted successfully.');
   }
 

@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Http\Request;
 use App\salarys;
 use App\salary_sheet;
 use DB;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class SalaryController extends Controller
@@ -24,8 +26,13 @@ class SalaryController extends Controller
       $salary->month = $request->month;
       $salary->amount = $request->amount;
  
+      if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/salary/entry')->with('message','You don\'t have permssion to add');
+      }
+      
 
   		$salary->save();
+      Alert::success('Success', 'Successfully Added');
 
       return redirect('/salary/entry')->with('message','insert successfully');
 
@@ -34,7 +41,10 @@ class SalaryController extends Controller
 
   public function manage(){
 
-      $salarys = salary_sheet::all();      
+      $salarys = DB::table('salary_sheets')   
+      ->join('employees','employees.id','=','salary_sheets.employee_id')
+      ->select('salary_sheets.*','employees.name') 
+      ->get();       
 
 
       return view('admin.salary.salaryManage',['salarys'=>$salarys]); 
@@ -54,7 +64,9 @@ class SalaryController extends Controller
 
   public function edit($id){
 
-
+    if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/salary/manage')->with('message','You don\'t have permssion to update');
+    }
      $salary= salary_sheet::where('id',$id)->first();
      return view('admin.salary.salaryEdit',['salary'=>$salary]);
   }
@@ -85,7 +97,9 @@ class SalaryController extends Controller
        unlink($salaryPic->pic);
      }
      
-
+     if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/salary/manage')->with('message','You don\'t have permssion to delete');
+    }
 
      $salaryDelete= salary_sheet::find($id);
      $salaryDelete->delete();

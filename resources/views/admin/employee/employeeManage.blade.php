@@ -42,7 +42,7 @@
                                         <td>{{$employee->salary}}</td>
 
                                 		
-                                		<td><a href="{{url('/employee/view/'.$employee->id)}}" target="_blank"></a> |<a href="{{url('/employee/edit/'.$employee->id)}}" target="_blank">Edit</a> |<a href="{{url('/employee/delete/'.$employee->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/employee/view/'.$employee->id)}}" target="_blank"></a> <a href="{{url('/employee/edit/'.$employee->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/employee/delete/'.$employee->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach

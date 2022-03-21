@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Http\Request;
 use App\projects;
 use App\projects_deposits;
 use DB;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectDepositController extends Controller
@@ -20,12 +22,17 @@ class ProjectDepositController extends Controller
       $project = new projects_deposits();
 
   		$project->tender_id = $request->tender_id;
-      $project->deposite_date = $request->deposit_date;
-      $project->deposite_by = $request->deposit_by;
+      $project->deposite_date = $request->deposite_date;
+      $project->deposite_by = $request->deposite_by;
       $project->amount = $request->amount;
  
 
+      if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/projectDeposit/entry')->with('message','You don\'t have permssion to add');
+      }
+      
   		$project->save();
+      Alert::success('Success', 'Successfully Added');
 
       return redirect('/projectDeposit/entry')->with('message','insert successfully');
 
@@ -34,11 +41,26 @@ class ProjectDepositController extends Controller
 
   public function manage(){
 
-      $projects = projects_deposits::all();      
-
+      //$projects = projects_deposits::all();  
+      $projects = DB::table('projects_deposits')
+                  ->join('projects','projects.tender_id','=','projects_deposits.tender_id')
+                  ->select('projects_deposits.*', 'projects.project_name')
+                  ->get();
 
       return view('admin.projectDeposit.projectManage',['projects'=>$projects]); 
   }
+
+  public function search(Request $request){
+    $projects = DB::table('projects_deposits')
+                ->whereBetween('deposite_date', [$request->from_date,$request->to_date])
+                ->join('projects','projects.tender_id','=','projects_deposits.tender_id')
+                ->select('projects_deposits.*','projects.project_name')
+                ->get();
+
+    return view('admin.projectDeposit.projectManage',['projects'=>$projects]); 
+}
+
+ 
 
 
   public function singleproject($id){
@@ -53,8 +75,9 @@ class ProjectDepositController extends Controller
   }
 
   public function edit($id){
-
-
+    if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/projectDeposit/manage')->with('message','You don\'t have permssion to update');
+    }
      $project= projects_deposits::where('id',$id)->first();
      return view('admin.projectDeposit.projectEdit',['project'=>$project]);
   }
@@ -84,8 +107,9 @@ class ProjectDepositController extends Controller
        unlink($projectPic->pic);
      }
      
-
-
+     if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/projectDeposit/manage')->with('message','You don\'t have permssion to delete');
+    }
      $projectDelete= projects_deposits::find($id);
      $projectDelete->delete();
      

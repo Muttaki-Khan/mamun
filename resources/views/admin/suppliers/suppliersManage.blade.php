@@ -37,11 +37,11 @@
                                 	<tr>
                                 		<td>{{++$i}}</td>
                                 		<td>{{$supplier->name}}</td>
-                                		<td>{{$supplier->item_id}}</td>
+                                		<td>{{$supplier->item_name}}</td>
                                 		<td>{{$supplier->quantity}}</td>
                                         <td>{{$supplier->order_amount}}</td>
                                 		<td>{{$supplier->order_date}}</td>
-                                		<td><a href="{{url('/suppliers/view/'.$supplier->id)}}" target="_blank"></a> |<a href="{{url('/suppliers/edit/'.$supplier->id)}}" target="_blank">Edit</a> |<a href="{{url('/suppliers/delete/'.$supplier->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/suppliers/view/'.$supplier->id)}}" target="_blank"></a> <a href="{{url('/suppliers/edit/'.$supplier->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/suppliers/delete/'.$supplier->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 	</tr>
                                 	@endforeach
                                 </tbody>

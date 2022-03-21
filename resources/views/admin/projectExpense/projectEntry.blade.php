@@ -23,7 +23,7 @@
                                             <label>Project</label>
                                             <select name="tender_id" class="form-control">
                                             @foreach($tenders as $tender)    
-                                            <option value='{{$tender->id}}'>{{$tender->project_name}}</option>
+                                            <option value='{{$tender->tender_id}}'>{{$tender->project_name}}</option>
                                             @endforeach
                                             </select>
                                         </div>

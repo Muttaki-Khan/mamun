@@ -35,7 +35,7 @@
                                 		<td>{{++$i}}</td>
                                 		<td>{{$item->item_name}}</td>
                              
-                                		<td><a href="{{url('/item/view/'.$item->id)}}" target="_blank"></a> <a href="{{url('/item/edit/'.$item->id)}}" class="btn btn-primary btn-lg active" role="button" target="_blank">Edit</a> 
+                                		<td><a href="{{url('/item/view/'.$item->id)}}" target="_blank"></a> <a href="{{url('/item/edit/'.$item->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> 
                                         <a href="{{url('/item/delete/'.$item->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>

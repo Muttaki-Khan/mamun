@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Http\Request;
 use App\suppliers;
 use App\item;
 use DB;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class SuppliersController extends Controller
@@ -24,9 +26,14 @@ class SuppliersController extends Controller
       $suppliers->quantity = $request->quantity;
   		$suppliers->order_amount = $request->order_amount;
   		$suppliers->order_date = $request->order_date;
- 
+
+      if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/suppliers/entry')->with('message','You don\'t have permssion to add');
+      }
+      
 
   		$suppliers->save();
+      Alert::success('Success', 'Successfully Added');
 
       return redirect('/suppliers/entry')->with('message','suppliers insert successfully');
 
@@ -35,7 +42,10 @@ class SuppliersController extends Controller
 
   public function manage(){
 
-      $suppliers = suppliers::all();      
+      $suppliers = DB::table('suppliers')   
+                  ->join('items','items.id','=','suppliers.item_id')
+                  ->select('suppliers.*','items.item_name') 
+                  ->get(); 
 
       return view('admin.suppliers.suppliersManage',['suppliers'=>$suppliers]); 
   }
@@ -54,7 +64,9 @@ class SuppliersController extends Controller
 
   public function edit($id){
      $items = item::all();
-
+     if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/suppliers/manage')->with('message','You don\'t have permssion to update');
+    }
      $suppliers= suppliers::where('id',$id)->first();
      return view('admin.suppliers.suppliersEdit',['suppliers'=>$suppliers,'items'=>$items]);
   }
@@ -86,7 +98,9 @@ class SuppliersController extends Controller
        unlink($suppliersPic->pic);
      }
      
-
+     if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/suppliers/manage')->with('message','You don\'t have permssion to delete');
+    }
 
      $suppliersDelete= suppliers::find($id);
      $suppliersDelete->delete();

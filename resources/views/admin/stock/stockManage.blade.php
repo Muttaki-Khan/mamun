@@ -33,10 +33,10 @@
                                 	@foreach($stocks as $stock)
                                 	<tr>
                                 		<td>{{++$i}}</td>
-                                		<td>{{$stock->item_id}}</td>
+                                		<td>{{$stock->item_name}}</td>
                                 		<td>{{$stock->quantity}}</td>
                                 		
-                                		<td><a href="{{url('/stock/view/'.$stock->id)}}" target="_blank"></a> |<a href="{{url('/stock/edit/'.$stock->id)}}" target="_blank">Edit</a> |<a href="{{url('/stock/delete/'.$stock->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/stock/view/'.$stock->id)}}" target="_blank"></a> <a href="{{url('/stock/edit/'.$stock->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/stock/delete/'.$stock->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach

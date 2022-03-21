@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\category;
 use App\item;
 use DB;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
@@ -18,15 +19,16 @@ class ItemController extends Controller
   public function save(Request $request){
 
       $item = new item();
-
-
   		$item->item_name = $request->name;
 
-  		$item->save();
-
       $lastId = $item->id;
+ 
+      if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/item/entry')->with('message','You don\'t have permssion to add');
+      }
+      
+  		$item->save();
       Alert::success('Success', 'Successfully Added');
-
       return redirect('/item/entry')->with('message','Item insert successfully');
 
 
@@ -54,7 +56,9 @@ class ItemController extends Controller
 
   public function editItem($id){
 
-
+    if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/item/manage')->with('message','You don\'t have permssion to update');
+    }
      $item= item::where('id',$id)->first();
      return view('admin.item.itemEdit',['item'=>$item]);
   }
@@ -79,8 +83,9 @@ class ItemController extends Controller
      if (file_exists($itemPic->pic)) {
        unlink($itemPic->pic);
      }
-     Alert::warning('Warning!!', 'Do you want to delete?');
-
+     if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/item/manage')->with('message','You don\'t have permssion to delete');
+    }
 
      $itemDelete= item::find($id);
      $itemDelete->delete();

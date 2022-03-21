@@ -19,6 +19,13 @@
 	$i=0;
 	 ?>
 	<div class="panel-body">
+    {!! Form::open(['url'=>'/projectExpense/manage','method'=>'post','enctype'=>'multipart/form-data'])!!}
+
+    <input name="from_date" type="text" class="datepicker" id="fromDate" placeholder="From date..."> </input>
+    <input name="to_date" type="text" class="datepicker" id="toDate" placeholder="To date..."> </input>
+    <button name="search" type="submit" id="search" value="search"> Search </button>
+    {!! Form::close() !!}
+
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
@@ -34,11 +41,11 @@
                                 	@foreach($suppliers as $supplier)
                                 	<tr>
                                 		<td>{{++$i}}</td>
-                                		<td>{{$supplier->suppliers_id}}</td>
+                                		<td>{{$supplier->name}}</td>
                                 		<td>{{$supplier->payment_date}}</td>
                                 		<td>{{$supplier->payment_amount}}</td>
                                 		
-                                		<td><a href="{{url('/suppliers/view/'.$supplier->id)}}" target="_blank"></a> |<a href="{{url('/suppliersPayment/edit/'.$supplier->id)}}" target="_blank">Edit</a> |<a href="{{url('/suppliersPayment/delete/'.$supplier->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/suppliers/view/'.$supplier->id)}}" target="_blank"></a> <a href="{{url('/suppliersPayment/edit/'.$supplier->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/suppliersPayment/delete/'.$supplier->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach

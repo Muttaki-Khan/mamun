@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Http\Request;
 use App\projects;
 use App\project;
 use DB;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
@@ -22,8 +24,13 @@ class ProjectController extends Controller
   		$project->tender_id = $request->tender_id;
   		$project->estimate_cost = $request->estimate_cost;
  
+      if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/project/entry')->with('message','You don\'t have permssion to add');
+      }
+      
 
   		$project->save();
+      Alert::success('Success', 'Successfully Added');
 
       return redirect('/project/entry')->with('message','project insert successfully');
 
@@ -52,7 +59,9 @@ class ProjectController extends Controller
 
   public function edit($id){
 
-
+    if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/project/manage')->with('message','You don\'t have permssion to update');
+    }
      $project= projects::where('id',$id)->first();
      return view('admin.project.projectEdit',['project'=>$project]);
   }
@@ -82,7 +91,9 @@ class ProjectController extends Controller
        unlink($projectPic->pic);
      }
      
-
+     if(User::where('id',Auth::id())->first()->role_id!=1) {
+      return redirect('/project/manage')->with('message','You don\'t have permssion to delete');
+    }
 
      $projectDelete= projects::find($id);
      $projectDelete->delete();

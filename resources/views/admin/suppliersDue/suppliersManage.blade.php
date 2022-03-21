@@ -33,10 +33,10 @@
                                 	@foreach($suppliers as $supplier)
                                 	<tr>
                                 		<td>{{++$i}}</td>
-                                		<td>{{$supplier->suppliers_id}}</td>
+                                		<td>{{$supplier->name}}</td>
                                 		<td>{{$supplier->due_amount}}</td>
                                 		
-                                		<td><a href="{{url('/suppliers/view/'.$supplier->id)}}" target="_blank"></a> |<a href="{{url('/suppliersDue/edit/'.$supplier->id)}}" target="_blank">Edit</a> |<a href="{{url('/suppliersDue/delete/'.$supplier->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/suppliers/view/'.$supplier->id)}}" target="_blank"></a> <a href="{{url('/suppliersDue/edit/'.$supplier->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/suppliersDue/delete/'.$supplier->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach

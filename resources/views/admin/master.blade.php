@@ -93,16 +93,12 @@
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 <script>
   $(document).ready (function() {
-    $( "#datepicker" ).datepicker({dateFormat:'yy-mm-dd'});
+    $("#fromDate").datepicker({dateFormat:'yy-mm-dd'});
   } );
-</script>
-
-<script>
-  $('#click').on('click',function() {
-    Swal.fire(
-    'The Internet?',
-    'That thing is still around?',
-    'question'
-  )
-  } )
+  $(document).ready (function() {
+    $("#toDate").datepicker({dateFormat:'yy-mm-dd'});
+  } );
+  $(document).ready (function() {
+    $("#datepicker").datepicker({dateFormat:'yy-mm-dd'});
+  } );
 </script>

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	All office List
+	All office Expense List
     <hr>
     <h3 style="color: green;">{{Session::get('message')}}</h3>
 
@@ -19,6 +19,12 @@
 	$i=0;
 	 ?>
 	<div class="panel-body">
+    {!! Form::open(['url'=>'/officeExpense/manage','method'=>'post','enctype'=>'multipart/form-data'])!!}
+
+<input name="from_date" type="text" class="datepicker" id="fromDate" placeholder="From date..."> </input>
+<input name="to_date" type="text" class="datepicker" id="toDate" placeholder="To date..."> </input>
+<button name="search" type="submit" id="search" value="search"> Search </button>
+{!! Form::close() !!}
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
@@ -42,7 +48,7 @@
                                         <td>{{$office->amount}}</td>
 
                                 		
-                                		<td><a href="{{url('/office/view/'.$office->id)}}" target="_blank"></a> |<a href="{{url('/officeExpense/edit/'.$office->id)}}" target="_blank">Edit</a> |<a href="{{url('/officeExpense/delete/'.$office->id)}}" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/office/view/'.$office->id)}}" target="_blank"></a> <a href="{{url('/officeExpense/edit/'.$office->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> |<a href="{{url('/officeExpense/delete/'.$office->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach
