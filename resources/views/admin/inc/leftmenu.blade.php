@@ -103,6 +103,19 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Sites<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url('/site/entry')}}">Add New Site</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/site/manage')}}">All Sites List</a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Project Expense<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -129,7 +142,20 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Suppliers<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Company Suppliers<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url('/companysuppliers/entry')}}">Add New</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/companysuppliers/manage')}}">All Suppliers</a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Suppliers Orders<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ url('/suppliers/entry')}}">Add New</a>
@@ -155,8 +181,8 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Suppliers Due<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a href="{{ url('/suppliersDue/manage')}}"><i class="fa fa-bar-chart-o fa-fw"></i>Suppliers Due<span class="fa arrow"></span></a>
+                            <!-- <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ url('/suppliersDue/entry')}}">Add New</a>
                                 </li>
@@ -164,7 +190,7 @@
                                     <a href="{{ url('/suppliersDue/manage')}}">All Record</a>
                                 </li>
                                
-                            </ul>
+                            </ul> -->
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
@@ -175,6 +201,19 @@
                                 </li>
                                 <li>
                                     <a href="{{ url('/stock/manage')}}">All Record</a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Stock Transfer<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ url('/stockTransfer/entry')}}">Add New</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/stockTransfer/manage')}}">All Record</a>
                                 </li>
                                
                             </ul>

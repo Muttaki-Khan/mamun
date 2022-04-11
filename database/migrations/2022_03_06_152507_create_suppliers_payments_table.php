@@ -4,14 +4,14 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSuppliersPaymentTable extends Migration
+class CreateSuppliersPaymentsTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('suppliers_payment', function (Blueprint $table) {
+        Schema::create('suppliers_payments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('payment_date');
             $table->unsignedBigInteger('suppliers_id');

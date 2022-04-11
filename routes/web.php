@@ -40,7 +40,6 @@ Route::group(['middleware' => ['web', 'auth']], function(){
         
         } else{
 			
-
             return view('admin.home.homeContent');
         }
     });
@@ -139,6 +138,14 @@ Route::get('/msg/kill/{id}',[
 	Route::post('/project/edit','ProjectController@update');
 	Route::get('/project/delete/{id}','ProjectController@delete');
 
+		//============= Admin.Site =============
+		Route::get('/site/entry', 'SiteController@index');
+		Route::post('/site/entry', 'SiteController@save');
+		Route::get('/site/manage','SiteController@manage');
+		Route::get('/site/edit/{id}','SiteController@edit');
+		Route::post('/site/edit','SiteController@update');
+		Route::get('/site/delete/{id}','SiteController@delete');
+
 		//============= Admin.Project Expenses =============
 	Route::get('/projectExpense/entry', 'ProjectExpenseController@index');
     Route::post('/projectExpense/entry', 'ProjectExpenseController@save');
@@ -175,6 +182,15 @@ Route::get('/msg/kill/{id}',[
 	Route::get('/salary/edit/{id}','SalaryController@edit');
 	Route::post('/salary/edit','SalaryController@update');
 	Route::get('/salary/delete/{id}','SalaryController@delete');
+	Route::post('/salary/manage','SalaryController@search');
+
+			//============= Admin.Company Supliers =============
+	Route::get('/companysuppliers/entry', 'CompanySuppliersController@index');
+    Route::post('/companysuppliers/entry', 'CompanySuppliersController@save');
+    Route::get('/companysuppliers/manage','CompanySuppliersController@manage');
+	Route::get('/companysuppliers/edit/{id}','CompanySuppliersController@edit');
+	Route::post('/companysuppliers/edit','CompanySuppliersController@update');
+	Route::get('/companysuppliers/delete/{id}','CompanySuppliersController@delete');
 
 	
 		//============= Admin.Supliers =============
@@ -184,6 +200,8 @@ Route::get('/msg/kill/{id}',[
 	Route::get('/suppliers/edit/{id}','SuppliersController@edit');
 	Route::post('/suppliers/edit','SuppliersController@update');
 	Route::get('/suppliers/delete/{id}','SuppliersController@delete');
+	Route::post('/suppliers/manage','SuppliersController@search');
+
 
 			//============= Admin.Supliers Due =============
 	Route::get('/suppliersDue/entry', 'SuppliersDueController@index');
@@ -209,6 +227,16 @@ Route::get('/msg/kill/{id}',[
 	Route::get('/stock/edit/{id}','StockController@edit');
 	Route::post('/stock/edit','StockController@update');
 	Route::get('/stock/delete/{id}','StockController@delete');
+
+		    //============= Admin.Stock Transfer =============
+	Route::get('/stockTransfer/entry', 'StockTransferController@index');
+    Route::post('stockTransfer/entry', 'StockTransferController@save');
+    Route::get('/stockTransfer/manage','StockTransferController@manage');
+	Route::get('/stockTransfer/edit/{id}','StockTransferController@edit');
+	Route::post('/stockTransfer/edit','StockTransferController@update');
+	Route::get('/stockTransfer/delete/{id}','StockTransferController@delete');
+	Route::post('/stockTransfer/manage','StockTransferController@search');
+
 
 				//============= Admin.Office Expenses =============
 	Route::get('/officeExpense/entry', 'OfficeExpenseController@index');

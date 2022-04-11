@@ -21,25 +21,25 @@
                                         
                                         <div class="form-group datepicker">
                                             <label>Expense Date</label>
-                                            <input type="text"  class="form-control datepicker" id="datepicker" name="expense_date">
+                                            <input autocomplete='off' type="text"  class="form-control datepicker" id="datepicker" name="expense_date">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Expense Reason</label>
-                                            <input type="text" class="form-control" name="expense_reason">
+                                            <input autocomplete='off' type="text" class="form-control" name="expense_reason">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Debit By</label>
-                                            <input type="text" class="form-control" name="debit_by">
+                                            <input autocomplete='off' type="text" class="form-control" name="debit_by">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Amount</label>
-                                            <input class="form-control" name="amount">
+                                            <input autocomplete='off' class="form-control" name="amount">
                             
                                         </div>
                                         

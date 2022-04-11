@@ -44,10 +44,25 @@ class SalaryController extends Controller
       $salarys = DB::table('salary_sheets')   
       ->join('employees','employees.id','=','salary_sheets.employee_id')
       ->select('salary_sheets.*','employees.name') 
-      ->get();       
+      ->paginate(15);
+      // ->get();       
 
 
       return view('admin.salary.salaryManage',['salarys'=>$salarys]); 
+  }
+
+  
+  public function search(Request $request){
+    $salarys = DB::table('salary_sheets') 
+      ->whereBetween('payment_date', [$request->from_date,$request->to_date])  
+      ->join('employees','employees.id','=','salary_sheets.employee_id')
+      ->select('salary_sheets.*','employees.name') 
+      ->paginate(15);
+      // ->get();       
+
+
+      return view('admin.salary.salaryManage',['salarys'=>$salarys]); 
+
   }
 
 
@@ -63,12 +78,13 @@ class SalaryController extends Controller
   }
 
   public function edit($id){
+    $employees = DB::table('employees')->get();
 
     if(User::where('id',Auth::id())->first()->role_id!=1) {
       return redirect('/salary/manage')->with('message','You don\'t have permssion to update');
     }
      $salary= salary_sheet::where('id',$id)->first();
-     return view('admin.salary.salaryEdit',['salary'=>$salary]);
+     return view('admin.salary.salaryEdit',['salary'=>$salary,'employees'=>$employees]);
   }
   public function update(Request $request){
 

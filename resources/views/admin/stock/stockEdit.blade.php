@@ -1,11 +1,11 @@
 @extends('admin.master')
 
 @section('title')
-	project Edit
+	stockEdit
 @endsection
 
 @section('content-heading')
-	Project Deposit Edit
+	stock Edit
 
 @endsection
 

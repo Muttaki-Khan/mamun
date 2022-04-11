@@ -78,7 +78,6 @@ class ItemController extends Controller
   }
   public function deleteItem($id){
 
-
     $itemPic= item::where('id',$id)->first();
      if (file_exists($itemPic->pic)) {
        unlink($itemPic->pic);

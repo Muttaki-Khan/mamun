@@ -48,8 +48,10 @@ class ProjectExpenseController extends Controller
 
       $projects = DB::table('projects_expenses')
                   ->join('projects','projects.tender_id','=','projects_expenses.tender_id')
-                  ->select('projects_expenses.*','projects.project_name')
-                  ->get();
+                  ->join('items','items.id','=','projects_expenses.item_id')
+                  ->select('projects_expenses.*','projects.project_name' , 'items.item_name')
+                  ->paginate(15);
+                  // ->get();
 
       return view('admin.projectExpense.projectManage',['projects'=>$projects]); 
   }
@@ -58,8 +60,10 @@ class ProjectExpenseController extends Controller
     $projects = DB::table('projects_expenses')
                 ->whereBetween('payment_date', [$request->from_date,$request->to_date])
                 ->join('projects','projects.tender_id','=','projects_expenses.tender_id')
-                ->select('projects_expenses.*','projects.project_name')
-                ->get();
+                ->join('items','items.id','=','projects_expenses.item_id')
+                ->select('projects_expenses.*','projects.project_name', 'items.item_name')
+                ->paginate(15);
+
 
     return view('admin.projectExpense.projectManage',['projects'=>$projects]); 
 }

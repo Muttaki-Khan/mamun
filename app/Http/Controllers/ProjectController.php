@@ -39,8 +39,8 @@ class ProjectController extends Controller
 
   public function manage(){
 
-      $projects = projects::all();      
-
+      // $projects = projects::all(); 
+      $projects = DB::table('projects')->paginate(15);           
 
       return view('admin.project.projectManage',['projects'=>$projects]); 
   }

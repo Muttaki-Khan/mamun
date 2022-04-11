@@ -5,7 +5,7 @@
 @endsection
 
 @section ('title')
-	E-museum
+	Beyond
 @endsection
 
 @section('mainContent')

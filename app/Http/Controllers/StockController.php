@@ -19,6 +19,7 @@ class StockController extends Controller
 
   	public function save(Request $request){
 
+
   		$stocks = new stock();
 
   		$stocks->item_id = $request->item_id;
@@ -31,7 +32,7 @@ class StockController extends Controller
   		$stocks->save();
         Alert::success('Success', 'Successfully Added');
 
-  		return redirect('/stock/save')->with('message','Data insert successfully.');
+  		return redirect('/stock/entry')->with('message','Data insert successfully.');
 
 
 
@@ -41,17 +42,20 @@ class StockController extends Controller
       $stocks = DB::table('stocks')
                   ->join('items','items.id','=','stocks.item_id')
                   ->select('stocks.*','items.item_name')
-                  ->get();
+                  ->paginate(15);
+                  // ->get();
 
       return view('admin.stock.stockManage',['stocks'=>$stocks]);
   }
 
   public function edit($id){
+    $items = item::all();
+
     if(User::where('id',Auth::id())->first()->role_id!=1) {
         return redirect('/stock/manage')->with('message','You don\'t have permssion to update');
       }
       $stock = stock::where('id',$id)->first();
-      return view('admin.stock.stockEdit',['stock'=>$stock]);
+      return view('admin.stock.stockEdit',['stock'=>$stock,'items'=>$items]);
   }
 
   public function update(Request $request){

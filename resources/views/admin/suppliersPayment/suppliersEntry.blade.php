@@ -19,22 +19,23 @@
                                         {!! Form::open(['url'=>'/suppliersPayment/entry','method'=>'post','enctype'=>'multipart/form-data'])!!}
                                        
                                         <div class="form-group">
-                                            <label>suppliers</label>
+                                            <label>Suppliers Name</label>
                                             <select name="suppliers_id" class="form-control">
-                                            @foreach($suppliers as $supplier)    
-                                            <option value='{{$supplier->id}}'>{{$supplier->name}}</option>
+                                            @foreach($companysuppliers as $supply)    
+                                            <option value='{{$supply->id}}'>{{$supply->suppliers_name}}</option>
                                             @endforeach
                                             </select>
                                         </div>
+
                                         <div class="form-group datepicker">
                                             <label>Payment Date</label>
-                                            <input type="text"  class="form-control datepicker" id="datepicker" name="payment_date">
+                                            <input autocomplete='off' type="text"  class="form-control datepicker" id="datepicker" name="payment_date">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Payment Amount</label>
-                                            <input class="form-control" name="payment_amount">
+                                            <input autocomplete="off" class="form-control" name="payment_amount">
                                         
                                         </div>
                                         

@@ -19,39 +19,50 @@
 
                                         <div class="form-group">
                                             <label>Suppliers Name</label>
-                                            <input type="text" value="{{$suppliers->name}}" class="form-control" name="name">
-                                        
+                                            <select name="suppliers_id" class="form-control">
+                                            @foreach($companysuppliers as $supply)    
+                                            <option value='{{$supply->id}}'>{{$supply->suppliers_name}}</option>
+                                            @endforeach
+                                            </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Item</label>
                                             <select name="item_id" class="form-control">
                                             @foreach($items as $item)    
-                                            <option value='{{$item->id}}'>{{$item->name}}</option>
+                                            <option value='{{$item->id}}'>{{$item->item_name}}</option>
                                             @endforeach
                                             </select>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Quantity</label>
-                                            <input type="text" value="{{$suppliers->quantity}}" class="form-control" name="quantity">
+                                            <input autocomplete="off" id="n1"  onfocus="calcular()"  type="text" value="{{$suppliers->quantity}}" class="form-control" name="quantity">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Order Amount</label>
-                                            <input class="form-control" value="{{$suppliers->order_amount}}" name="order_amount">
+                                            <input autocomplete="off" id="n2"  onfocus="calcular()"  class="form-control" value="{{$suppliers->order_amount}}" name="order_amount">
+                                        
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Total Amount</label>
+                                            <input autocomplete="off" id="result"  onfocus="calcular()"  class="form-control" value="{{$suppliers->total_amount}}" name="total_amount">
                                         
                                         </div>
 
                                         <div class="form-group datepicker">
                                             <label>Order Date</label>
-                                            <input type="text" value="{{$suppliers->order_date}}" class="form-control datepicker" id="datepicker" name="order_date">
+                                            <input autocomplete="off" type="text" value="{{$suppliers->order_date}}" class="form-control datepicker" id="datepicker" name="order_date">
                                         
                                         </div>
 
                                         
-                                        <input type="hidden" name="suppliers_id" value="{{$suppliers->id}}">
+                                        <input type="hidden" name="id" value="{{$suppliers->id}}">
+                                        <input type="hidden" name="suppliers_id" value="{{$suppliers->suppliers_id}}">
+
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-block btn-primary">
                                         </div>  

@@ -31,7 +31,7 @@
                                         
                                         <div class="form-group datepicker">
                                             <label>Payment Date</label>
-                                            <input type="text"  class="form-control datepicker" id="datepicker" name="payment_date">
+                                            <input type="text" autocomplete='off' class="form-control datepicker" id="datepicker" name="payment_date">
                                         
                                         </div>
 
@@ -49,19 +49,19 @@
 
                                         <div class="form-group">
                                             <label>Quantity</label>
-                                            <input class="form-control" name="quantity">
+                                            <input autocomplete='off' class="form-control" name="quantity">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Price</label>
-                                            <input class="form-control" name="price">
+                                            <input autocomplete='off' class="form-control" name="price">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Total</label>
-                                            <input class="form-control" name="total">
+                                            <input autocomplete='off' class="form-control" name="total">
                                         
                                         </div>
                                         

@@ -91,6 +91,7 @@
 </html>
 
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
 <script>
   $(document).ready (function() {
     $("#fromDate").datepicker({dateFormat:'yy-mm-dd'});
@@ -102,3 +103,35 @@
     $("#datepicker").datepicker({dateFormat:'yy-mm-dd'});
   } );
 </script>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTables-example");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+<script>
+
+function calcular(){
+    var valor1 = parseInt(document.getElementById('n1').value,10);
+    var valor2 = parseInt(document.getElementById('n2').value,10);
+    document.getElementById('result').value = valor1 * valor2;
+}
+</script>
+

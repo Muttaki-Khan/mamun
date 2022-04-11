@@ -13,9 +13,10 @@ class CreateProjectsExpensesTable extends Migration
     {
         Schema::create('projects_expenses', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('site_id');
             $table->unsignedBigInteger('item_id');
             $table->date('payment_date');
-            $table->integer('quantity');
+            $table->string('quantity');
             $table->double('price', 15, 5);
             $table->double('total', 15, 5);
             $table->unsignedBigInteger('tender_id');

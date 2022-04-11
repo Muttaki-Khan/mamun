@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Http\Request;
 use App\offices;
@@ -38,7 +39,7 @@ class OfficeExpenseController extends Controller
 
   public function manage(){
 
-      $offices = DB::table('office_expenses')->get();
+      $offices = DB::table('office_expenses')->paginate(15);
       return view('admin.officeExpense.officeManage',['offices'=>$offices]); 
   }
 
@@ -46,7 +47,7 @@ class OfficeExpenseController extends Controller
     $projects = DB::table('office_expenses')
                 ->whereBetween('expense_date', [$request->from_date,$request->to_date])
                 
-                ->get();
+                ->paginate(15);
 
     return view('admin.projectExpense.projectManage',['projects'=>$projects]); 
 }

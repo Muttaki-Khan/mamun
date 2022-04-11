@@ -19,7 +19,7 @@
                                         {!! Form::open(['url'=>'/project/entry','method'=>'post','enctype'=>'multipart/form-data'])!!}
                                         <div class="form-group">
                                             <label>Project Name</label>
-                                            <input type="text" class="form-control" name="project_name">
+                                            <input autocomplete='off' type="text" class="form-control" name="project_name">
                                         
                                         </div>
                                         
@@ -31,7 +31,7 @@
 
                                         <div class="form-group">
                                             <label>Estimated Cost</label>
-                                            <input class="form-control" name="estimate_cost">
+                                            <input autocomplete='off' class="form-control" name="estimate_cost">
                                         
                                         </div>
                                         

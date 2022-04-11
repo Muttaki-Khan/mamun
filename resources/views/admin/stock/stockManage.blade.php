@@ -19,6 +19,12 @@
 	$i=0;
 	 ?>
 	<div class="panel-body">
+    {!! Form::open(['url'=>'/stock/manage','method'=>'post','enctype'=>'multipart/form-data'])!!}
+
+<input type="text" id="myInput" onkeyup="myFunction()" 
+placeholder="Search for names.." title="Type in a name" style="">
+
+{!! Form::close() !!}
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
@@ -42,5 +48,6 @@
                                 	@endforeach
                                 </tbody>
                             </table>
+                            {{$stocks->links()}}
                         </div>
 @endsection

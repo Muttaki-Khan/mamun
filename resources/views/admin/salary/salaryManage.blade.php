@@ -19,6 +19,16 @@
 	$i=0;
 	 ?>
 	<div class="panel-body">
+    {!! Form::open(['url'=>'/salary/manage','method'=>'post','enctype'=>'multipart/form-data'])!!}
+
+    <input autocomplete="off" name="from_date" type="text" class="datepicker" id="fromDate" placeholder="From date..."> </input>
+    <input autocomplete="off" name="to_date" type="text" class="datepicker" id="toDate" placeholder="To date..."> </input>
+    <button name="search" type="submit" id="search" value="search" style="margin-right: 320px;"> Search </button>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" 
+    placeholder="Search for names.." title="Type in a name" style="">
+
+    {!! Form::close() !!}
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
@@ -47,5 +57,6 @@
                                 	@endforeach
                                 </tbody>
                             </table>
+                            {{$salarys->links()}}
                         </div>
 @endsection

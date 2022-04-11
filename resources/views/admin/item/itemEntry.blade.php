@@ -19,13 +19,13 @@
                                         {!! Form::open(['url'=>'/item/entry','method'=>'post','enctype'=>'multipart/form-data'])!!}
                                         <div class="form-group">
                                             <label>Item Name</label>
-                                            <input type="text" class="form-control" name="name">
+                                            <input autocomplete='off' type="text" class="form-control" name="name">
                                         
                                         </div>
                                        
                                         
                                         <div class="form-group">
-                                            <input type="submit" class="btn btn-block btn-primary">
+                                            <input autocomplete='off' type="submit" class="btn btn-block btn-primary">
                                         </div>  
                                      {!! Form::close() !!}
                                 </div>

@@ -28,19 +28,19 @@
                                         </div>
                                         <div class="form-group datepicker">
                                             <label>Deposit Date</label>
-                                            <input type="text"  class="form-control datepicker" id="datepicker" name="deposite_date">
+                                            <input autocomplete='off' type="text"  class="form-control datepicker" id="datepicker" name="deposite_date">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Deposit By</label>
-                                            <input type="text" class="form-control" name="deposite_by">
+                                            <input autocomplete='off' type="text" class="form-control" name="deposite_by">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Amount</label>
-                                            <input class="form-control" name="amount">
+                                            <input autocomplete='off' class="form-control" name="amount">
                                         
                                         </div>
                                         

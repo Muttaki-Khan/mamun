@@ -41,9 +41,10 @@ class SuppliersDueController extends Controller
   public function manage(){
 
       $suppliers = DB::table('suppliers_dues')   
-                  ->join('suppliers','suppliers.id','=','suppliers_dues.suppliers_id')
-                  ->select('suppliers_dues.*','suppliers.name') 
-                  ->get();       
+                  ->join('company_suppliers','company_suppliers.id','=','suppliers_dues.suppliers_id')
+                  ->select('suppliers_dues.*','company_suppliers.suppliers_name') 
+                  ->paginate(15);
+                  // ->get();       
 
 
       return view('admin.suppliersDue.suppliersManage',['suppliers'=>$suppliers]); 

@@ -19,10 +19,14 @@ Add Suppliers
                                         {!! Form::open(['url'=>'/suppliers/entry','method'=>'post','enctype'=>'multipart/form-data'])!!}
                                        
                                         
+                        
                                         <div class="form-group">
                                             <label>Suppliers Name</label>
-                                            <input type="text" class="form-control" name="name">
-                                        
+                                            <select name="suppliers_id" class="form-control">
+                                            @foreach($companysuppliers as $supply)    
+                                            <option value='{{$supply->id}}'>{{$supply->suppliers_name}}</option>
+                                            @endforeach
+                                            </select>
                                         </div>
 
                                         <div class="form-group">
@@ -34,25 +38,32 @@ Add Suppliers
                                             </select>
                                         </div>
 
+                                        <div class="form-group datepicker">
+                                            <label>Order Date</label>
+                                            <input autocomplete='off' type="text"  class="form-control datepicker" id="datepicker" name="order_date">
+                                        
+                                        </div>
             
 
                                         <div class="form-group">
                                             <label>Quantity</label>
-                                            <input  class="form-control" name="quantity">
+                                            <input autocomplete="off" id="n1"  onfocus="calcular()"  class="form-control" name="quantity">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Order Amount</label>
-                                            <input class="form-control" name="order_amount">
+                                            <input autocomplete="off" id="n2"  onfocus="calcular()" class="form-control" name="order_amount">
                                         
                                         </div>
 
-                                        <div class="form-group datepicker">
-                                            <label>Order Date</label>
-                                            <input type="text"  class="form-control datepicker" id="datepicker" name="order_date">
+                                        <div class="form-group">
+                                            <label>Total Amount</label>
+                                            <input autocomplete="off" id="result" onfocus="calcular()" class="form-control" name="total_amount">
                                         
                                         </div>
+
+                                                                                            
                                         
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-block btn-primary">

@@ -45,7 +45,8 @@ class ProjectDepositController extends Controller
       $projects = DB::table('projects_deposits')
                   ->join('projects','projects.tender_id','=','projects_deposits.tender_id')
                   ->select('projects_deposits.*', 'projects.project_name')
-                  ->get();
+                  ->paginate(15);
+                  // ->get();
 
       return view('admin.projectDeposit.projectManage',['projects'=>$projects]); 
   }
@@ -55,7 +56,7 @@ class ProjectDepositController extends Controller
                 ->whereBetween('deposite_date', [$request->from_date,$request->to_date])
                 ->join('projects','projects.tender_id','=','projects_deposits.tender_id')
                 ->select('projects_deposits.*','projects.project_name')
-                ->get();
+                ->paginate(15);
 
     return view('admin.projectDeposit.projectManage',['projects'=>$projects]); 
 }

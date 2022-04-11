@@ -28,14 +28,27 @@
                                         </div>
                                         <div class="form-group datepicker">
                                             <label>Payment Date</label>
-                                            <input type="text"  class="form-control datepicker" id="datepicker" name="payment_date">
+                                            <input autocomplete='off' type="text"  class="form-control datepicker" id="datepicker" name="payment_date">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Month</label>
-                                            <input type="text" class="form-control" name="month">
-                                        
+                                            <select name="month" class="form-control">
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+
+                                            </select>                                        
                                         </div>
 
                                         <div class="form-group">
