@@ -34,7 +34,7 @@ class ProjectDepositController extends Controller
   		$project->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/projectDeposit/entry')->with('message','insert successfully');
+      return redirect('/projectDeposit/manage')->with('message','insert successfully');
 
 
   }

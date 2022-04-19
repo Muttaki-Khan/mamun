@@ -31,7 +31,7 @@ class SiteController extends Controller
   		$site->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/site/entry')->with('message','insert successfully');
+      return redirect('/site/manage')->with('message','insert successfully');
 
 
   }

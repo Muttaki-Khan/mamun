@@ -55,7 +55,7 @@ class stockTransferController extends Controller
   		$stockTransfer->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/stockTransfer/entry')->with('message','insert successfully');
+      return redirect('/stockTransfer/manage')->with('message','insert successfully');
 
 
   }

@@ -49,7 +49,7 @@ class SuppliersController extends Controller
   		$suppliers->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/suppliers/entry')->with('message','suppliers insert successfully');
+      return redirect('/suppliers/manage')->with('message','suppliers insert successfully');
 
 
   }

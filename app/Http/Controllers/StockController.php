@@ -5,7 +5,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
-use App\stock;
+use App\stocks;
 use App\item;
 use App\User;
 use DB;
@@ -19,20 +19,31 @@ class StockController extends Controller
 
   	public function save(Request $request){
 
+      if(User::where('id',Auth::id())->first()->role_id!=1) {
+        return redirect('/stock/entry')->with('message','You don\'t have permssion to add');
+      }
+      if($request->quantity<0) {
+        Alert::error('Error', 'Please enter a valid amount');
+        return redirect('/stock/manage');
+      }
+  		$stocks = new stocks();
+      $stockRow  = stocks::where('item_id',$request->item_id)->first();
 
-  		$stocks = new stock();
 
-  		$stocks->item_id = $request->item_id;
-  		$stocks->quantity = $request->quantity;  
+      if($stockRow !=null){
+        $stockRow = stocks::find($stockRow->id);
+        $stockRow->quantity = $stockRow->quantity+$request->quantity;
+        $stockRow->save();
+      }else{
+        $stocks->item_id = $request->item_id;
+        $stocks->quantity = $request->quantity;
+        $stocks->save();
+      }
+   
+  		
+      Alert::success('Success', 'Successfully Added');
 
-          if(User::where('id',Auth::id())->first()->role_id!=1) {
-            return redirect('/stock/entry')->with('message','You don\'t have permssion to add');
-          }
-          
-  		$stocks->save();
-        Alert::success('Success', 'Successfully Added');
-
-  		return redirect('/stock/entry')->with('message','Data insert successfully.');
+  		return redirect('/stock/manage')->with('message','Data insert successfully.');
 
 
 
@@ -54,13 +65,13 @@ class StockController extends Controller
     if(User::where('id',Auth::id())->first()->role_id!=1) {
         return redirect('/stock/manage')->with('message','You don\'t have permssion to update');
       }
-      $stock = stock::where('id',$id)->first();
+      $stock = stocks::where('id',$id)->first();
       return view('admin.stock.stockEdit',['stock'=>$stock,'items'=>$items]);
   }
 
   public function update(Request $request){
 
-      $stock = stock::find($request->stock_id);
+      $stock = stocks::find($request->stock_id);
 
       $stock->item_id = $request->item_id;
       $stock->quantity = $request->quantity;  
@@ -77,7 +88,8 @@ class StockController extends Controller
     if(User::where('id',Auth::id())->first()->role_id!=1) {
         return redirect('/stock/manage')->with('message','You don\'t have permssion to delete');
       }
-      $stockDelete = stock::find($id);
+      $stockDelete = stocks::find($id);
+
       $stockDelete->delete();
       
 

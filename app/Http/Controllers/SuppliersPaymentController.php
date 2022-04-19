@@ -41,7 +41,7 @@ class SuppliersPaymentController extends Controller
       $dueTable->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/suppliersPayment/entry')->with('message','insert successfully');
+      return redirect('/suppliersPayment/manage')->with('message','insert successfully');
 
 
   }

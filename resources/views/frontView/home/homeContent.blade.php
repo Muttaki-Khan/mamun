@@ -15,7 +15,9 @@
       <div class="nav-bar">
         <div class="brand">
           <a href="#hero">
-            <h1><span>The  Beyond</span><span> Ltd</span></h1>
+            <!-- <h1><span>Beyond Holdings</span><span> Ltd</span></h1> -->
+            <h1><img src="{{ asset('frontEnd') }}/images/head.png" /></h1>
+
           </a>
         </div>
         <div class="nav-list">
@@ -43,7 +45,8 @@
       <div>
         <h1>Hello, <span></span></h1>
         <h1>We Are<span></span></h1>
-        <h1><img src="{{ asset('frontEnd') }}/images/headtrans.png" /></h1>
+        <!-- <h1>Beyond Holdings Ltd</h1> -->
+        <h1><img src="{{ asset('frontEnd') }}/images/new2.png" /></h1>
         <a href="#contact" type="button" class="cta">Visit Us</a>
       </div>
     </div>
@@ -97,7 +100,7 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Project Bondor</h1>
-            <h2>Coding is Love</h2>
+            <h2>Our Bondor Project</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
               rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
               harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
@@ -109,7 +112,7 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Project Zindabazar</h1>
-            <h2>Coding is Love</h2>
+            <h2>Our Zindabazar Project</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
               rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
               harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
@@ -121,7 +124,7 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Project Chawhatta</h1>
-            <h2>Coding is Love</h2>
+            <h2>Our Chawhatta Project</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
               rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
               harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
@@ -133,7 +136,7 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Project Baruthkhana</h1>
-            <h2>Coding is Love</h2>
+            <h2>Our Baruthkhana Project</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
               rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
               harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
@@ -145,7 +148,7 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Project Pathantula</h1>
-            <h2>Coding is Love</h2>
+            <h2>Our Pathantula Project</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
               rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
               harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
@@ -362,7 +365,7 @@
           <div class="contact-info">
             <h1>Phone</h1>
             <h2>+88 01768 000 555</h2>
-            <h2>+1 234 123 1234</h2>
+            <!-- <h2>+1 234 123 1234</h2> -->
           </div>
         </div>
         <div class="contact-item">
@@ -370,7 +373,7 @@
           <div class="contact-info">
             <h1>Email</h1>
             <h2>thebeyondltd@gmail.com</h2>
-            <h2>abcd@gmail.com</h2>
+            <!-- <h2>abcd@gmail.com</h2> -->
           </div>
         </div>
         

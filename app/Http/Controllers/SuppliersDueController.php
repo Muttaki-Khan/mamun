@@ -33,7 +33,7 @@ class SuppliersDueController extends Controller
   		$suppliers->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/suppliersDue/entry')->with('message','insert successfully');
+      return redirect('/suppliersDue/manage')->with('message','insert successfully');
 
 
   }

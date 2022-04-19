@@ -18,7 +18,7 @@
                                        
                                         <div class="form-group">
                                             <label>Site Name</label>
-                                            <select name="site_id" class="form-control">
+                                            <select name="site_id" class="form-control" disabled>
                                             @foreach($sites as $site)    
                                             <option value='{{$site->id}}'>{{$site->site_name}}</option>
                                             @endforeach
@@ -34,7 +34,7 @@
 
                                         <div class="form-group">
                                             <label>Item</label>
-                                            <select name="item_id" class="form-control">
+                                            <select name="item_id" class="form-control" disabled>
                                             @foreach($items as $item)    
                                             <option value='{{$item->id}}'>{{$item->item_name}}</option>
                                             @endforeach

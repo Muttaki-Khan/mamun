@@ -34,7 +34,7 @@ class SalaryController extends Controller
   		$salary->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/salary/entry')->with('message','insert successfully');
+      return redirect('/salary/manage')->with('message','insert successfully');
 
 
   }

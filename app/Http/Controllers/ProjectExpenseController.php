@@ -39,7 +39,7 @@ class ProjectExpenseController extends Controller
   		$project->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/projectExpense/entry')->with('message','insert successfully');
+      return redirect('/projectExpense/manage')->with('message','insert successfully');
 
 
   }

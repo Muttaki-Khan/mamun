@@ -29,7 +29,7 @@ class ItemController extends Controller
       
   		$item->save();
       Alert::success('Success', 'Successfully Added');
-      return redirect('/item/entry')->with('message','Item insert successfully');
+      return redirect('/item/manage')->with('message','Item insert successfully');
 
 
   }

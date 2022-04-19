@@ -32,7 +32,7 @@ class ProjectController extends Controller
   		$project->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/project/entry')->with('message','project insert successfully');
+      return redirect('/project/manage')->with('message','project insert successfully');
 
 
   }
