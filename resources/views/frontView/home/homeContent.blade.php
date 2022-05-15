@@ -29,7 +29,7 @@
             <li><a href="#services" data-after="Service">Services</a></li>
             <li><a href="#projects" data-after="Projects">Projects</a></li>
 			<li><a href="#memories" data-after="Memories">Memories</a></li>
-            <li><a href="#about" data-after="About">About</a></li>
+            <!-- <li><a href="#about" data-after="About">About</a></li> -->
             <li><a href="#contact" data-after="Contact">Contact</a></li>
           </ul>
         </div>
@@ -199,7 +199,7 @@
 
     
   <!-- About Section -->
-  <section id="about">
+  <!-- <section id="about">
     <div class="about container">
       <div class="col-left">
         <div class="about-img">
@@ -328,7 +328,7 @@
         <a href="#" class="cta">Contact Me</a>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- End About Section -->
 
