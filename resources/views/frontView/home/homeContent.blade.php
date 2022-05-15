@@ -64,26 +64,22 @@
         <div class="service-item">
           <div class="icon"><img src="{{ asset('frontEnd') }}/images/build.jpg" /></div>
           <h2>Building Construction</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia quod</p>
+          <p>We have been doing building construction as well</p>
         </div>
         <div class="service-item">
           <div class="icon"><img src="{{ asset('frontEnd') }}/images/road.jpg" /></div>
           <h2>Road Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia quod</p>
+          <p>Most of our project is related to road development</p>
         </div>
         <div class="service-item">
           <div class="icon"><img src="{{ asset('frontEnd') }}/images/drain.jpg" /></div>
           <h2>Dranage Development</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia quod</p>
+          <p>We have the best dranage construction reputation in Sylhet City</p>
         </div>
         <div class="service-item">
           <div class="icon"><img src="{{ asset('frontEnd') }}/images/factory.jpg" /></div>
           <h2>Factory Construction</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
-            architecto placeat beatae tenetur officia quod</p>
+          <p>We did develop few factory in outside of Sylhet town</p>
         </div>
       </div>
     </div>
@@ -101,9 +97,7 @@
           <div class="project-info">
             <h1>Project Bondor</h1>
             <h2>Our Bondor Project</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
-              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
-              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+            <p>This is one of our best development we did so far!</p>
           </div>
           <div class="project-img">
             <img src="{{ asset('frontEnd') }}/images/pro1.jpg" alt="img">
@@ -113,9 +107,7 @@
           <div class="project-info">
             <h1>Project Zindabazar</h1>
             <h2>Our Zindabazar Project</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
-              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
-              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+            <p>A huge project handled by us back in 2020</p>
           </div>
           <div class="project-img">
             <img src="{{ asset('frontEnd') }}/images/pro2.jpg" alt="img">
@@ -125,9 +117,7 @@
           <div class="project-info">
             <h1>Project Chawhatta</h1>
             <h2>Our Chawhatta Project</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
-              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
-              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+            <p>This is one of our running project in 2022</p>
           </div>
           <div class="project-img">
             <img src="{{ asset('frontEnd') }}/images/pro3.jpg" alt="img">
@@ -137,9 +127,7 @@
           <div class="project-info">
             <h1>Project Baruthkhana</h1>
             <h2>Our Baruthkhana Project</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
-              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
-              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+            <p>This is another running project in baruthkhana</p>
           </div>
           <div class="project-img">
             <img src="{{ asset('frontEnd') }}/images/pro4.jpg" alt="img">
@@ -149,9 +137,7 @@
           <div class="project-info">
             <h1>Project Pathantula</h1>
             <h2>Our Pathantula Project</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
-              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
-              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+            <p>Dranage development going on in pathantula</p>
           </div>
           <div class="project-img">
             <img src="{{ asset('frontEnd') }}/images/pro5.jpg" alt="img">
