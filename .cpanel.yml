@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/beyoinaa/public_html/
-    - /bin/cp -R mamun $DEPLOYPATH
+    - /bin/cp -r * $DEPLOYPATH
