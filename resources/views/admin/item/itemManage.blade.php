@@ -31,7 +31,7 @@
                                         <th>SI.</th>
                                         <th>Item Name</th>
                                        
-                                        <th>Action</th>
+                                        <!-- <th>Action</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,8 +40,8 @@
                                 		<td>{{++$i}}</td>
                                 		<td>{{$item->item_name}}</td>
                              
-                                		<td><a href="{{url('/item/view/'.$item->id)}}" target="_blank"></a> <a href="{{url('/item/edit/'.$item->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> 
-                                        <a href="{{url('/item/delete/'.$item->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<!-- <td><a href="{{url('/item/view/'.$item->id)}}" target="_blank"></a> <a href="{{url('/item/edit/'.$item->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> 
+                                        <a href="{{url('/item/delete/'.$item->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td> -->
                                 		
                                 	</tr>
                                 	@endforeach
