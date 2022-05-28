@@ -49,19 +49,19 @@
 
                                         <div class="form-group">
                                             <label>Quantity</label>
-                                            <input autocomplete='off' class="form-control" name="quantity">
+                                            <input autocomplete='off' id="n1"  onfocus="calcular()" class="form-control" name="quantity">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Price</label>
-                                            <input autocomplete='off' class="form-control" name="price">
+                                            <input autocomplete='off' id="n2"  onfocus="calcular()" class="form-control" name="price">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Total</label>
-                                            <input autocomplete='off' class="form-control" name="total">
+                                            <input autocomplete='off' id="result" onfocus="calcular()" class="form-control" name="total">
                                         
                                         </div>
                                         
