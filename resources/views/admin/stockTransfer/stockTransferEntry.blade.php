@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	Add New Supplier 
+	Add New Transfer
 	<hr>
     <h4 style="color: green;">{{Session::get('message')}}</h4>
 
@@ -31,9 +31,9 @@
                                         <div class="form-group">
                                             <label>Site Name</label>
                                             <select name="site_id" id="site" class="form-control" required>
-                                            <!-- @foreach($sites as $site)    
+                                            @foreach($sites as $site)    
                                             <option value='{{$site->id}}'>{{$site->site_name}}</option>
-                                            @endforeach -->
+                                            @endforeach
                                             </select>
                                         </div>
                                         
