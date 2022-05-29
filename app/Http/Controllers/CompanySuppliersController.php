@@ -29,7 +29,7 @@ class CompanySuppliersController extends Controller
       
   		$companysuppliers->save();
       Alert::success('Success', 'Successfully Added');
-      return redirect('/companysuppliers/entry')->with('message','companysuppliers insert successfully');
+      return redirect('/companysuppliers/manage')->with('message','companysuppliers insert successfully');
 
 
   }

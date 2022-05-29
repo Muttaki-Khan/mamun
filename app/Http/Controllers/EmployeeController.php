@@ -5,6 +5,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\employees;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EmployeeController extends Controller
 {
@@ -31,7 +32,7 @@ class EmployeeController extends Controller
   		$employee->save();
         Alert::success('Success', 'Successfully Added');
 
-  		return redirect('/employee/entry')->with('message','Data insert successfully.');
+  		return redirect('/employee/manage')->with('message','Data insert successfully.');
 
 
 

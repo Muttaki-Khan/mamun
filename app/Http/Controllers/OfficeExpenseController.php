@@ -32,7 +32,7 @@ class OfficeExpenseController extends Controller
   		$office->save();
       Alert::success('Success', 'Successfully Added');
 
-      return redirect('/officeExpense/entry')->with('message','insert successfully');
+      return redirect('/officeExpense/manage')->with('message','insert successfully');
 
 
   }
