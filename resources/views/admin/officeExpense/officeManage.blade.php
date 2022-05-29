@@ -52,7 +52,7 @@
                                         <td>{{$office->amount}}</td>
 
                                 		
-                                		<td><a href="{{url('/office/view/'.$office->id)}}" target="_blank"></a> <a href="{{url('/officeExpense/edit/'.$office->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> |<a href="{{url('/officeExpense/delete/'.$office->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/office/view/'.$office->id)}}" target="_blank"></a> <a href="{{url('/officeExpense/edit/'.$office->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/officeExpense/delete/'.$office->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
                                 		
                                 	</tr>
                                 	@endforeach

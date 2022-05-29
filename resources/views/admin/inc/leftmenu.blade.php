@@ -181,7 +181,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="{{ url('/suppliersDue/manage')}}"><i class="fa fa-bar-chart-o fa-fw"></i>Suppliers Due<span class="fa arrow"></span></a>
+                            <a href="{{ url('/suppliersDue/manage')}}"><i class="fa fa-bar-chart-o fa-fw"></i>Suppliers Due<span class=""></span></a>
                             <!-- <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{ url('/suppliersDue/entry')}}">Add New</a>

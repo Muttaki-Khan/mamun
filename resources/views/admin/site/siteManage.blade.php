@@ -45,7 +45,7 @@
                                 	
 
                                 		
-                                		<td><a href="{{url('/site/view/'.$site->id)}}" target="_blank"></a> <a href="{{url('/site/edit/'.$site->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/site/delete/'.$site->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                		<td><a href="{{url('/site/view/'.$site->id)}}" target="_blank"></a> <a href="{{url('/site/edit/'.$site->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/site/delete/'.$site->id)}}" class="" role="button" onclick="return confirm('Do you want to delete?')"></td>
                                 		
                                 	</tr>
                                 	@endforeach

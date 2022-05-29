@@ -1,11 +1,11 @@
 @extends('admin.master')
 
 @section('title')
-	companysuppliers Manage
+	company suppliers Manage
 @endsection
 
 @section('content-heading')
-	All companysuppliers List
+	All company suppliers List
     <hr>
     <h3 style="color: green;">{{Session::get('message')}}</h3>
 
@@ -29,7 +29,7 @@
                                 <thead>
                                     <tr>
                                         <th>SI.</th>
-                                        <th>companysuppliers Name</th>
+                                        <th>company suppliers Name</th>
                                        
                                         <th>Action</th>
                                     </tr>
@@ -41,7 +41,7 @@
                                 		<td>{{$companysuppliers->suppliers_name}}</td>
                              
                                 		<td><a href="{{url('/companysuppliers/view/'.$companysuppliers->id)}}" target="_blank"></a> <a href="{{url('/companysuppliers/edit/'.$companysuppliers->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> 
-                                        <a href="{{url('/companysuppliers/delete/'.$companysuppliers->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
+                                        <a href="{{url('/companysuppliers/delete/'.$companysuppliers->id)}}" class="" role="button" onclick="return confirm('Do you want to delete?')"></td>
                                 		
                                 	</tr>
                                 	@endforeach

@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 
 //============= Search =============//
