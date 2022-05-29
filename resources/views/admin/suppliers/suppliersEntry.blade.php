@@ -1,11 +1,11 @@
 @extends('admin.master')
 
 @section('title')
-	suppliers Entry
+	suppliers order Entry
 @endsection
 
 @section('content-heading')
-Add Suppliers 
+Add Suppliers  Order
 	<hr>
     <h4 style="color: green;">{{Session::get('message')}}</h4>
 

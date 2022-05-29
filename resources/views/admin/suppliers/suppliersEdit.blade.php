@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	Suppliers Edit
+	Suppliers Order Edit
 
 @endsection
 

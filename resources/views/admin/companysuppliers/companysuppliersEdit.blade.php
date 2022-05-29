@@ -18,7 +18,7 @@
                                         <div class="form-group">
                                             <label>companysuppliers Name</label>
                                             <input type="text" class="form-control"
-                                             value="{{$companysuppliers->suppliers_name}}"  name="suppliers_name">
+                                             value="{{$companysuppliers->suppliers_name}}"  name="name">
                                         
                                         </div>
                                         
