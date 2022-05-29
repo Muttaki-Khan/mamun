@@ -45,19 +45,19 @@
 
                                         <div class="form-group">
                                             <label>Quantity</label>
-                                            <input class="form-control" value="{{$project->quantity}}" name="quantity">
+                                            <input class="form-control" id="n1"  onfocus="calcular()" value="{{$project->quantity}}" name="quantity">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Price</label>
-                                            <input class="form-control" value="{{$project->price}}" name="price">
+                                            <input class="form-control" id="n2"  onfocus="calcular()" value="{{$project->price}}" name="price">
                                         
                                         </div>
 
                                         <div class="form-group">
                                             <label>Total</label>
-                                              <input class="form-control"  value="{{$project->total}}" name="total">
+                                              <input class="form-control" id="result"  onfocus="calcular()" value="{{$project->total}}" name="total">
                                         
                                         </div>
 
