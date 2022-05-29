@@ -107,8 +107,9 @@ class SuppliersController extends Controller
     //  $suppliersPic= suppliers::where('id',$request->suppliers_id)->first();
 
      $suppliers= suppliers::find($request->id);
-
+    //dd($request);
      $difference = $request->total_amount - $suppliers->total_amount;
+     $suppliers->suppliers_id = $request->suppliers_id;
      $suppliers->item_id = $request->item_id;
      $suppliers->quantity = $request->quantity;
      $suppliers->order_amount = $request->order_amount;

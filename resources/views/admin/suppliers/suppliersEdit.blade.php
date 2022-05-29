@@ -61,7 +61,7 @@
 
                                         
                                         <input type="hidden" name="id" value="{{$suppliers->id}}">
-                                        <input type="hidden" name="suppliers_id" value="{{$suppliers->suppliers_id}}">
+                                        <!-- <input type="hidden" name="suppliers_id" value="{{$suppliers->suppliers_id}}"> -->
 
                                         <div class="form-group">
                                             <input type="submit" class="btn btn-block btn-primary">
