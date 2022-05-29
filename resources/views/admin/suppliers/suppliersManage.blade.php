@@ -5,7 +5,7 @@
 @endsection
 
 @section('content-heading')
-	All suppliers List
+	All suppliers Order List
     <hr>
     <h3 style="color: green;">{{Session::get('message')}}</h3>
 

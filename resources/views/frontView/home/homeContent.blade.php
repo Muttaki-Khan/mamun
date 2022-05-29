@@ -382,11 +382,11 @@
         <div class="social-item">
           <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
         </div>
-        <div class="social-item">
+        <!-- <div class="social-item">
           <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png" /></a>
-        </div>
+        </div> -->
         <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
+          <a href="login"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
         </div>
       </div>
       <p>Copyright © 2022 Muttaki. All rights reserved</p>

@@ -135,7 +135,7 @@ function myFunction() {
 function calcular(){
     var valor1 = parseFloat(document.getElementById('n1').value,10);
     var valor2 = parseFloat(document.getElementById('n2').value,10);
-    document.getElementById('result').value = (valor1 * valor2).toFixed(2);
+    document.getElementById('result').value = valor1 * valor2;
 }
 </script>
 
