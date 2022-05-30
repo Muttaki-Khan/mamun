@@ -19,9 +19,14 @@
                                         <div class="form-group">
                                             <label>Site Name</label>
                                             <select name="site_id" class="form-control" disabled>
-                                            @foreach($sites as $site)    
+                                            @foreach($sites as $site) 
+                                            @if($site->id == $stockTransfer->site_id) 
                                             <option value='{{$site->id}}'>{{$site->site_name}}</option>
+                                            @endif
                                             @endforeach
+                                           
+                                            <input type="hidden" name="site_id" value="{{$stockTransfer->item_id}}"> </input>
+
                                             </select>
                                         </div>
 
@@ -35,9 +40,12 @@
                                         <div class="form-group">
                                             <label>Item</label>
                                             <select name="item_id" class="form-control" disabled>
-                                            @foreach($items as $item)    
+                                            @foreach($items as $item) 
+                                            @if($item->id == $stockTransfer->item_id)   
                                             <option value='{{$item->id}}'>{{$item->item_name}}</option>
+                                            @endif
                                             @endforeach
+                                            <input type="hidden" name="item_id" value="{{$stockTransfer->item_id}}"> </input>
                                             </select>
                                            
                                         </select>

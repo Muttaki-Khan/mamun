@@ -14,23 +14,27 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     
-                                        {!! Form::open(['url'=>'/suppliers/edit','method'=>'post', 'enctype'=>'multipart/form-data' , 'name'=> 'projectEditForm' ])!!}
+                                        {!! Form::open(['url'=>'/suppliers/edit','method'=>'post', 'enctype'=>'multipart/form-data' , 'name'=> 'suppliersEditForm' ])!!}
                                        
 
                                         <div class="form-group">
                                             <label>Suppliers Name</label>
                                             <select name="suppliers_id" class="form-control" disabled>
-                                            @foreach($companysuppliers as $supply)    
-                                            <option value='{{$supply->id}}'>{{$supply->suppliers_name}}</option>
+                                            @foreach($companysuppliers as $supply) 
+                                            @if($supply->id == $suppliers->suppliers_id)   
+                                            <option selected value='{{$supply->id}}' >{{$supply->suppliers_name}}</option>
+                                            @endif
                                             @endforeach
                                             </select>
+                                            <input type="hidden" name="suppliers_id" value="{{$suppliers->suppliers_id}}"> </input>
                                         </div>
 
                                         <div class="form-group">
                                             <label>Item</label>
                                             <select name="item_id" class="form-control">
                                             @foreach($items as $item)    
-                                            <option value='{{$item->id}}'>{{$item->item_name}}</option>
+        
+                                            <option selected value='{{$item->id}}'>{{$item->item_name}}</option>
                                             @endforeach
                                             </select>
                                         </div>
@@ -71,5 +75,8 @@
 
                             </div>
                             </div>
+                            <script type="text/javascript">
+document.forms['suppliersEditForm'].elements['suppliers_id'].value='{{$suppliers->suppliers_id}}';
+document.forms['suppliersEditForm'].elements['item_id'].value='{{$itemoriginal}}'</script>
 
 @endsection

@@ -21,10 +21,15 @@
 
                                            <label>Name</label>
                                             <select name="employee_id" class="form-control">
-                                            @foreach($employees as $name)    
+                                            @foreach($employees as $name)   
+                                            @if($name->id == $salary->employee_id)  
                                             <option value='{{$name->id}}'>{{$name->name}}</option>
+                                            @endif
+                                            <option value='{{$name->id}}'>{{$name->name}}</option>
+
                                             @endforeach
                                             </select>
+
                                         
                                         </div>
                                       

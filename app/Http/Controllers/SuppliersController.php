@@ -98,7 +98,9 @@ class SuppliersController extends Controller
       return redirect('/suppliers/manage')->with('message','You don\'t have permssion to update');
     }
      $suppliers= suppliers::where('id',$id)->first();
-     return view('admin.suppliers.suppliersEdit',['suppliers'=>$suppliers,'items'=>$items,'companysuppliers'=>$companysuppliers]);
+     //dd($suppliers);
+     return view('admin.suppliers.suppliersEdit',['suppliers'=>$suppliers,'items'=>$items,'companysuppliers'=>$companysuppliers,
+     'supplieroriginal'=>$suppliers->supplier_id, 'itemoriginal'=>$suppliers->item_id]);
   }
   public function update(Request $request){
 

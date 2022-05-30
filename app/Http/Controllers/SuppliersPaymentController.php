@@ -30,6 +30,9 @@ class SuppliersPaymentController extends Controller
       $suppliers->payment_amount = $request->payment_amount;
 
       $due = DB::table('suppliers_dues')->where('suppliers_id',$request->suppliers_id)->first();
+      if($due==null) {
+        return redirect('/suppliersPayment/entry')->with('message','This supplier has no order');
+      }
       $dueTable = suppliers_dues::find($due->id);
       $dueTable->due_amount = $dueTable->due_amount - $request->payment_amount;
  
@@ -37,6 +40,9 @@ class SuppliersPaymentController extends Controller
         return redirect('/suppliersPayment/entry')->with('message','You don\'t have permssion to add');
       }
       
+      // if(DB::table('suppliers')->join('companysuppliers','companysuppliers.id','=','suppliers.suppliers_id')->where("suppliers_id", )) {
+      //   return redirect('/suppliersPayment/entry')->with('message','This supplier has no order');
+      // }
   		$suppliers->save();
       $dueTable->save();
       Alert::success('Success', 'Successfully Added');
