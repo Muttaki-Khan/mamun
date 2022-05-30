@@ -48,7 +48,7 @@
                                 		<td>{{$project->project_name}}</td>
                                 		<td>{{$project->deposite_date}}</td>
                                 		<td>{{$project->deposite_by}}</td>
-                                        <td>{{$project->amount}}</td>
+                                        <td>{{round($project->amount, 2)}}</td>
 
                                 		
                                 		<td><a href="{{url('/project/view/'.$project->id)}}" target="_blank"></a> <a href="{{url('/projectDeposit/edit/'.$project->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/projectDeposit/delete/'.$project->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>

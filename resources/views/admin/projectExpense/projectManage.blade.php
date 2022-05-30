@@ -52,8 +52,8 @@
                                 		<td>{{$project->payment_date}}</td>
                                         <td>{{$project->item_name}}</td>
                                 		<td>{{$project->quantity}}</td>
-                                		<td>{{$project->price}}</td>
-                                        <td>{{$project->total}}</td>
+                                		<td>{{round($project->price, 2)}}</td>
+                                        <td>{{round($project->total, 2)}}</td>
 
                                 		
                                 		<td><a href="{{url('/project/view/'.$project->id)}}" target="_blank"></a> <a href="{{url('/projectExpense/edit/'.$project->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/projectExpense/delete/'.$project->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>

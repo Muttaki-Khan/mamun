@@ -36,7 +36,7 @@
                                 		<td>{{++$i}}</td>
                                 		<td>{{$project->project_name}}</td>
                                 		<td>{{$project->tender_id}}</td>
-                                		<td>{{$project->estimate_cost}}</td>
+                                		<td>{{round($project->estimate_cost, 2)}}</td>
                                 		
                                 		<td><a href="{{url('/project/view/'.$project->id)}}" target="_blank"></a> <a href="{{url('/project/edit/'.$project->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/project/delete/'.$project->id)}}" class="" role="button" onclick="return confirm('Do you want to delete?')"></td>
                                 		
