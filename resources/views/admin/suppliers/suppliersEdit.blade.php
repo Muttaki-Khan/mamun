@@ -19,7 +19,7 @@
 
                                         <div class="form-group">
                                             <label>Suppliers Name</label>
-                                            <select name="suppliers_id" class="form-control">
+                                            <select name="suppliers_id" class="form-control" disabled>
                                             @foreach($companysuppliers as $supply)    
                                             <option value='{{$supply->id}}'>{{$supply->suppliers_name}}</option>
                                             @endforeach
