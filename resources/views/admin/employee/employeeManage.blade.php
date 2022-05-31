@@ -45,7 +45,7 @@
                                 		<td>{{$employee->name}}</td>
                                 		<td>{{$employee->joining_date}}</td>
                                 		<td>{{$employee->designation}}</td>
-                                        <td>{{$employee->salary}}</td>
+                                        <td>{{round($employee->salary, 2)}}</td>
 
                                 		
                                 		<td><a href="{{url('/employee/view/'.$employee->id)}}" target="_blank"></a> <a href="{{url('/employee/edit/'.$employee->id)}}" class="btn btn-primary btn-lg active" role="button">Edit</a> <a href="{{url('/employee/delete/'.$employee->id)}}" class="btn btn-primary btn-lg active" role="button" onclick="return confirm('Do you want to delete?')">Delete</td>
