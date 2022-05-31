@@ -77,7 +77,7 @@
                                      {!! Form::close() !!}
                                 </div>
                                 <script type="text/javascript">
-                                    	document.forms['salaryEditForm'].elements['categoryId'].value='{{$salary->categoryId}}'</script>
+                                    	document.forms['salaryEditForm'].elements['employee_id'].value='{{$salary->employee_id}}'</script>
                             </div>
                             </div>
 

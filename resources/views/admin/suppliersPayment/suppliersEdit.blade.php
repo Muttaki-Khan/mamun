@@ -21,8 +21,13 @@
                                             <label>suppliers</label>
                                             <select name="suppliers_id" class="form-control">
                                             @foreach($companysuppliers as $supplier)  
+                                            @if($supplier->id == $suppliers->suppliers_id)  
                                             <option value='{{$supplier->id}}'>{{$supplier->suppliers_name}}</option>
+                                            @endif
+                                            <option value='{{$supplier->id}}'>{{$supplier->suppliers_name}}</option>
+
                                             @endforeach
+
                                             </select>
                                         </div>
 
@@ -40,13 +45,12 @@
 
                                         
                                         <input type="hidden" name="id" value="{{$suppliers->id}}">
-                                        <input type="hidden" name="suppliers_id" value="{{$suppliers->suppliers_id}}">                                        <div class="form-group">
                                             <input type="submit" class="btn btn-block btn-primary">
                                         </div>  
                                      {!! Form::close() !!}
                                 </div>
                                 <script type="text/javascript">
-                                    	document.forms['suppliersEditForm'].elements['categoryId'].value='{{$suppliers->categoryId}}'</script>
+                                    	document.forms['suppliersEditForm'].elements['suppliers_id'].value='{{$suppliers->suppliers_id}}'</script>
                             </div>
                             </div>
 
