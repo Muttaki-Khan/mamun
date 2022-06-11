@@ -46,7 +46,7 @@
                                 	@foreach($offices as $office)
                                 	<tr>
                                 		<td>{{++$i}}</td>
-                                		<td>{{$office->expense_date}}</td>
+                                        <td>{{ \Carbon\Carbon::parse($office->expense_date)->format('d/m/Y')}}</td>
                                 		<td>{{$office->expense_reason}}</td>
                                 		<td>{{$office->debit_by}}</td>
                                         <td>{{$office->amount}}</td>

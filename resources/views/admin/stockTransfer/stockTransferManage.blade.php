@@ -48,7 +48,7 @@
                                 		<td>{{++$i}}</td>
                                         <td>{{$stock->project_name}}</td>
                                 		<td>{{$stock->site_name}}</td>
-                                		<td>{{$stock->transfer_date}}</td>
+                                        <td>{{ \Carbon\Carbon::parse($stock->transfer_date)->format('d/m/Y')}}</td>
                                         <td>{{$stock->item_name}}</td>
                                 		<td>{{$stock->quantity}}</td>
 

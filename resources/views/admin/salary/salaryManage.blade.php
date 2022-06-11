@@ -46,7 +46,7 @@
                                 	<tr>
                                 		<td>{{++$i}}</td>
                                 		<td>{{$salary->name}}</td>
-                                		<td>{{$salary->payment_date}}</td>
+                                        <td>{{ \Carbon\Carbon::parse($salary->payment_date)->format('d/m/Y')}}</td>
                                 		<td>{{$salary->month}}</td>
                                         <td>{{round($salary->amount, 2)}}</td>
 

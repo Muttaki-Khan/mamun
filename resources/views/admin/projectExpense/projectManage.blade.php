@@ -49,7 +49,7 @@
                                 	<tr>
                                 		<td>{{++$i}}</td>
                                 		<td>{{$project->project_name}}</td>
-                                		<td>{{$project->payment_date}}</td>
+                                		<td>{{ \Carbon\Carbon::parse($project->payment_date)->format('d/m/Y')}}</td>
                                         <td>{{$project->item_name}}</td>
                                 		<td>{{$project->quantity}}</td>
                                 		<td>{{round($project->price, 2)}}</td>

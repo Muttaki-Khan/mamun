@@ -43,7 +43,7 @@
                                 	<tr>
                                 		<td>{{++$i}}</td>
                                 		<td>{{$employee->name}}</td>
-                                		<td>{{$employee->joining_date}}</td>
+                                        <td>{{ \Carbon\Carbon::parse($employee->joining_date)->format('d/m/Y')}}</td>
                                 		<td>{{$employee->designation}}</td>
                                         <td>{{round($employee->salary, 2)}}</td>
 
